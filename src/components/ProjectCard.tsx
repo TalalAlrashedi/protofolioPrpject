@@ -18,7 +18,7 @@ const getTagColor = (tag) => {
   return colors[tag] || "bg-gray-100 text-gray-800";
 };
 
-const ProjectCard = ({ title, url, image, tags }) => {
+const ProjectCard = ({ title, url, image, tags, description }) => {
   return (
     <a
       href={url}
@@ -34,6 +34,12 @@ const ProjectCard = ({ title, url, image, tags }) => {
       />
       <div className="p-5 text-black">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
+
+
+        {description && (
+          <p className="text-sm text-gray-700  p-1 mb-2">{description}</p>
+        )}
+
         <div className="flex flex-wrap gap-2 mb-4">
           {tags?.map((tag, i) => (
             <span
@@ -44,6 +50,7 @@ const ProjectCard = ({ title, url, image, tags }) => {
             </span>
           ))}
         </div>
+
         <p className="text-sm text-blue-600 font-medium">View Project →</p>
       </div>
     </a>
