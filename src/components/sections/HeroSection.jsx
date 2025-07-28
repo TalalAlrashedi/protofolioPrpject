@@ -17,7 +17,7 @@ const HeroSection = () => (
     </h1>
 
     <p className="text-lg text-gray-500 mb-6">
-      Software Engineer | Web Developer | Cybersecurity & Data Enthusiast
+      Software Engineer | Web Developer | Cybersecurity & Data analyst
     </p>
 
     <div className="flex justify-center gap-6 text-xl mb-6 text-gray-600">

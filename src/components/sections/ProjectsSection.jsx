@@ -8,31 +8,31 @@ const projects = [
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
-    image: "https://cdn-icons-png.flaticon.com/512/3596/3596073.png",
+    image: "public/AttendanceProject.png",
     tags: ["React", "Tailwind", "Node.js"],
   },
   {
     title: "Activition Clone",
     url: "https://activitionclonepro.onrender.com/",
-    image: "https://cdn-icons-png.flaticon.com/512/1865/1865856.png",
+    image: "public/ActivationClone.png",
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     title: "United Airlines Clone",
     url: "https://unitedairlines-651s.onrender.com/",
-    image: "https://cdn-icons-png.flaticon.com/512/1532/1532703.png",
+    image: "public/unitedairlinesClone.png",
     tags: ["React", "Tailwind"],
   },
   {
     title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
-    image: "https://cdn-icons-png.flaticon.com/512/873/873120.png",
+    image: "public/ProductShop.png",
     tags: ["HTML", "Tailwind CSS"],
   },
   {
     title: "Riyadh Season Clone",
     url: "https://riyadhseasonclone.onrender.com/",
-    image: "https://cdn-icons-png.flaticon.com/512/3022/3022216.png",
+    image: "public/RiyadhSeasonClone.png",
     tags: ["React", "Tailwind", "Clone"],
   },
   {
@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Weather App",
     url: "https://weatherapp-frontend-gcel.onrender.com/login",
-    image: "https://cdn-icons-png.flaticon.com/512/4052/4052984.png",
+    image: "public/Weather.png",
     tags: ["React", "API", "Tailwind"],
   },
 ];

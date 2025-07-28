@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Main content */}
+
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
@@ -35,7 +35,7 @@ const Home = () => {
         <ContactSection />
       </main>
 
-      {/* Footer always at bottom */}
+
       <Footer />
     </div>
   );
