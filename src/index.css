@@ -1,23 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* 🎨 ألوان مخصصة */
-  --color-bg: #ffffff;         /* الخلفية العامة */
-  --color-text: #141616;       /* النصوص داخل الأزرار */
-  --color-navbar-text: #ffffff; /* نصوص النافبار */
+  --color-bg: #ffffff;
+  --color-text: #141616;
+  --color-navbar-text: #fafafa;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* خلفية الصفحة */
 body {
   background-color: var(--color-bg);
-  color: var(--color-text); /* يمكن تغييره حسب الحاجة */
+  color: var(--color-text);
 }
 
-/* في ملف index.css أو global.css */
 @keyframes fade-up {
   0% {
     opacity: 0;

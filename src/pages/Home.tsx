@@ -7,6 +7,7 @@ import AboutSection from "../components/sections/AboutSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import ContactSection from "../components/sections/ContactSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const location = useLocation();
@@ -24,15 +25,19 @@ const Home = () => {
   }, [location]);
 
   return (
-    <div className="font-sans min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
-      <HeroSection />
+    <div className="min-h-screen flex flex-col">
+      {/* Main content */}
+      <main className="flex-grow">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
 
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      {/* Footer always at bottom */}
+      <Footer />
     </div>
   );
 };
-
 export default Home;

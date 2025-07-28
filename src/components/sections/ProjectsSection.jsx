@@ -2,9 +2,11 @@
 import React from "react";
 
 import ProjectCard from "../ProjectCard";
+import Underline from "../Underline";
+
 const projects = [
   {
-    title: "Mini Project Ideas Management",
+    title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
     image: "https://cdn-icons-png.flaticon.com/512/3596/3596073.png",
     tags: ["React", "Tailwind", "Node.js"],
@@ -22,7 +24,7 @@ const projects = [
     tags: ["React", "Tailwind"],
   },
   {
-    title: "Tailwind Lab 1",
+    title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
     image: "https://cdn-icons-png.flaticon.com/512/873/873120.png",
     tags: ["HTML", "Tailwind CSS"],
@@ -71,7 +73,13 @@ const Projects = () => {
 
     <div className="bg-[var(--color-bg)] text-[var(--color-text)] px-4 py-20 min-h-screen font-sans">
     <div className="max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">My Projects</h1>
+      <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">My Projects
+      {/* <span className="block w-16 h-1 bg-blue-500 mx-auto mt-2 rounded"></span>
+       */}
+        <Underline color="bg-[var(--color-text)]" width="w-16" className="mx-auto mt-2" />
+      </h1>
+
+
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard
