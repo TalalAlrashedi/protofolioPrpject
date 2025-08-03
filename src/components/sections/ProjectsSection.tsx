@@ -2,7 +2,7 @@
 import ProjectCard from "../ProjectCard";
 // import Underline from "../Underline";
 import Underline from "../Underline.jsx";
-
+import AnimatedSection from "../../utils/AnimatedSection.jsx";
 const projects = [
   {
     title: "IntelliCite",
