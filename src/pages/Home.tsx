@@ -28,7 +28,7 @@ const Home = () => {
     <div className="min-h-screen flex flex-col">
 
       <main className="flex-grow">
-        <HeroSection />
+        <HeroSection  />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />

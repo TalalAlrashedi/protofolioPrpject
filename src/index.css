@@ -4,14 +4,17 @@
   --color-bg: #ffffff;
   --color-text: #141616;
   --color-navbar-text: #fafafa;
+  --color-secondary: #372aac;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+ 
+
 body {
-  background-color: var(--color-bg);
+  @apply bg-gradient-to-br from-white to-indigo-50;
   color: var(--color-text);
 }
 

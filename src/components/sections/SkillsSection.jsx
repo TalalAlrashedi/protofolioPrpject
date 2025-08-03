@@ -12,6 +12,7 @@ import {
 import { FaLock } from "react-icons/fa";
 import { MdAnalytics } from "react-icons/md";
 import { getTagColor } from "../../utils/tagColors.js";
+import Underline from "../Underline.jsx";
 
 const skills = [
   "React",
@@ -40,10 +41,10 @@ const skillIcons = {
 };
 
 const SkillsSection = () => (
-  <section id="skills" className="max-w-5xl mx-auto p-10 text-center">
+  <section id="skills" className="max-w-5xl mx-auto p-10 text-center ">
     <h2 className="text-4xl font-bold text-black mb-10 relative inline-block">
       Skills
-      <span className="block w-16 h-1 bg-blue-500 mx-auto mt-2 rounded"></span>
+      <Underline />
     </h2>
 
     <div className="flex flex-wrap justify-center gap-4 bg-white shadow-md p-5 rounded-2xl">

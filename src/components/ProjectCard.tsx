@@ -1,4 +1,4 @@
-const getTagColor = (tag) => {
+const getTagColor = (tag:string) => {
   const colors = {
     React: "bg-blue-100 text-blue-800",
     Tailwind: "bg-teal-100 text-teal-800",
@@ -18,13 +18,20 @@ const getTagColor = (tag) => {
   return colors[tag] || "bg-gray-100 text-gray-800";
 };
 
-const ProjectCard = ({ title, url, image, tags, description }) => {
+interface ProjectCardProps {
+  title:string,
+  url:string,
+  image:string,
+  tags?:string[],
+  description?:string,
+}
+const ProjectCard = ({ title, url, image, tags, description }:ProjectCardProps) => {
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-xl bg-bg border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+      className="rounded-2xl bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
     >
       <img
         src={image}

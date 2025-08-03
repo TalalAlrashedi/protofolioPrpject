@@ -3,56 +3,63 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 const HeroSection = () => (
   <section
     id="hero"
-    className="relative text-center py-36 px-4 overflow-hidden"
+    className="relative text-center px-4 overflow-hidden min-h-screen flex items-center justify-center"
   >
-    {/* Background blob */}
+    {/* Animated Background Blob */}
     <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                 w-[600px] h-[600px] bg-[#bbece3] rounded-full
-                 opacity-80 blur-[150px] -z-10"
+      className="absolute top-1/2 left-1/2 w-[600px] h-[600px] 
+                  
+                 rounded-full opacity-70 blur-[150px] 
+                 animate-pulse-slow -z-10"
     ></div>
 
-    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-      Hello, I'm <span className="text-black">Talal Alrashedi</span>
-    </h1>
+    {/* Content */}
+    <div className="max-w-2xl mx-auto animate-fade-up text-gray-800 p-6">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        Hello, I'm <span className="text-indigo-800">Talal Alrashedi</span>
+      </h1>
 
-    <p className="text-lg text-gray-500 mb-6">
-      Software Engineer | Web Developer | Cybersecurity & Data analyst
-    </p>
+      <p className="text-lg text-gray-600 mb-8">
+        Software Engineer | Web Developer | Cybersecurity & Data Analyst
+      </p>
 
-    <div className="flex justify-center gap-6 text-xl mb-6 text-gray-600">
+      {/* Social Links */}
+      <div className="flex justify-center gap-6 text-2xl text-indigo-600 mb-6">
+        <a
+          href="https://github.com/username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black transition-transform transform hover:scale-110"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://linkedin.com/in/username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black transition-transform transform hover:scale-110"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://twitter.com/username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black transition-transform transform hover:scale-110"
+        >
+          <FaTwitter />
+        </a>
+      </div>
+
+      {/* Download CV Button */}
       <a
-        href="https://github.com/username"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-black transition"
+        href="public/cv/TalalAlrashediCv.pdf"
+        download
+        className="inline-block bg-[var(--color-secondary)] hover:bg-[#13302b] text-white px-6 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
       >
-        <FaGithub />
-      </a>
-      <a
-        href="https://linkedin.com/in/username"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-black transition"
-      >
-        <FaLinkedin />
-      </a>
-      <a
-        href="https://twitter.com/username"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-black transition"
-      >
-        <FaTwitter />
+        Download CV
       </a>
     </div>
-
-    <a
-      href="#projects"
-      className="inline-block px-6 py-2 rounded border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition"
-    >
-      View My Work
-    </a>
   </section>
 );
 

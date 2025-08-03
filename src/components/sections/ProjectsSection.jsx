@@ -86,20 +86,18 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects">
-      <div className="bg-[var(--color-bg)] text-[var(--color-text)] px-4 py-20 min-h-screen font-sans">
+      <div className=" text-[var(--color-text)] px-4 py-20 min-h-screen font-sans">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
             My Projects
             {/* <span className="block w-16 h-1 bg-blue-500 mx-auto mt-2 rounded"></span>
              */}
             <Underline
-              color="bg-[var(--color-text)]"
-              width="w-16"
-              className="mx-auto mt-2"
+            
             />
           </h1>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
             {projects.map((project, index) => (
               <ProjectCard
                 key={index}

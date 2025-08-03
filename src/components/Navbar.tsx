@@ -1,63 +1,57 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
-  { label: "Home", id: "hero", path: "/" },
+  { label: "Home", id: "hero" },
   { label: "About", id: "about" },
   { label: "Projects", id: "projects" },
+  { label: "Courses", id: "courses" },
   { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState("hero");
 
-  const handleNavigate = ({ label, id, path }) => {
+  const handleClick = (id) => {
+    setActiveId(id);
     setMenuOpen(false);
-    if (path && location.pathname !== path) {
-      navigate(path, { state: { scrollToId: id } });
-    } else {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      } else if (id === "hero") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else if (id === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
-  const renderNavItem = ({ label, path, id }) => (
-    <li key={label}>
-      <button
-        onClick={() => handleNavigate({ label, path, id })}
-        className={`block py-2 px-2 w-full text-left md:inline md:w-auto hover:text-blue-500 transition ${
-          location.pathname === path && path
-            ? "font-bold text-blue-600"
-            : "text-[var(--color-text)]"
-        }`}
-      >
-        {label}
-      </button>
-    </li>
-  );
-
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md h-20 mb-1 ">
-      <div className="max-w-6xl mx-auto  py-4 flex justify-between items-center md:justify-center">
+    <nav className="sticky top-0 z-50 backdrop-blur-md h-20 mb-1">
+      <div className="max-w-6xl mx-auto py-4 flex justify-between items-center md:justify-center">
         <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
-          myProtofolio
+          Talal<span className="text-[var(--color-secondary)]">Tech(TTA)</span>
         </h1>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-10 items-center bg-white bg-opacity-20 p-1 px-2 rounded-full shadow-md ">
-          {navItems.map(renderNavItem)}
+        <ul className="hidden md:flex gap-10 items-center bg-white bg-opacity-20 p-1 px-2 rounded-full shadow-md">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => handleClick(item.id)}
+                className={`py-2 px-2 transition-all duration-400 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
+                  activeId === item.id
+                    ? " bg-[var(--color-secondary)] text-white"
+                    : "text-[var(--color-text)]"
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden  text-black focus:outline-none"
+          className="md:hidden text-black focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -71,8 +65,21 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden  bg-white  flex flex-col items-center px-4 pb-4 space-y-2 text-center">
-          {navItems.map(renderNavItem)}
+        <ul className="md:hidden bg-white bg-opacity-20 flex flex-col items-center px-4 pb-4 space-y-2 text-center rounded-b-2xl shadow-md">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => handleClick(item.id)}
+                className={`py-2 px-2 transition-all duration-200 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
+                  activeId === item.id
+                    ? "bg-[var(--color-secondary)] text-white"
+                    : "text-[var(--color-text)]"
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
         </ul>
       )}
     </nav>
