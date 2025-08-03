@@ -1,40 +1,39 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
-import Swal from "sweetalert2"; // ✅ استيراد SweetAlert
+import Swal from "sweetalert2";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
 
 const ContactSection = () => {
   const form = useRef();
 
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // console.log("Service ID:", serviceID);
+  // console.log("Template ID:", templateID);
+  // console.log("Public Key:", publicKey);
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_6xh3qxp",
-        "template_v1chthn",
-        form.current,
-        "HaqdmsY28KhldUDKF"
-      )
-      .then(
-        (result) => {
-          Swal.fire({
-            icon: "success",
-            title: "Message Sent!",
-            text: "Thank you for reaching out. I'll get back to you soon.",
-            confirmButtonColor: "#1b3e38",
-          });
-          form.current.reset();
-        },
-        (error) => {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong. Please try again later.",
-            confirmButtonColor: "#1b3e38",
-          });
-        }
-      );
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+      () => {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for ",
+          confirmButtonColor: "#1b3e38",
+        });
+        form.current.reset();
+      },
+      () => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong. Please try again later.",
+          confirmButtonColor: "#1b3e38",
+        });
+      }
+    );
   };
 
   return (
