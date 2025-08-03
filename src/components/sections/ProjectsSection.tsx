@@ -1,8 +1,8 @@
 // pages/Projects.jsx
-import React from "react";
-
 import ProjectCard from "../ProjectCard";
-import Underline from "../Underline";
+// import Underline from "../Underline";
+import Underline from "../Underline.jsx";
+
 
 const projects = [
     {

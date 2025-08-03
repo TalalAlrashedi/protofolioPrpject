@@ -8,6 +8,7 @@ import SkillsSection from "../components/sections/SkillsSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import ContactSection from "../components/sections/ContactSection";
 import Footer from "../components/Footer";
+import ToolsSection from "../components/sections/ToolsSection";
 
 const Home = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const Home = () => {
         <HeroSection  />
         <AboutSection />
         <SkillsSection />
+        <ToolsSection />
         <ProjectsSection />
         <ContactSection />
       </main>

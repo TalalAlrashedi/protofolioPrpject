@@ -3,11 +3,9 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiJavascript,
-  SiPython,
   SiHtml5,
   SiCss3,
   SiGithub,
-  SiNodedotjs,
 } from "react-icons/si";
 import { FaLock } from "react-icons/fa";
 import { MdAnalytics } from "react-icons/md";

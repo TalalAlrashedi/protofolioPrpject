@@ -1,5 +1,6 @@
 import { FaUserShield } from "react-icons/fa";
-import Underline from "../Underline";
+import Underline from "../Underline.jsx";
+
 const AboutSection = () => (
   <section id="about" className="relative py-24 px-6 md:px-12">
     <div className="max-w-5xl mx-auto text-center">

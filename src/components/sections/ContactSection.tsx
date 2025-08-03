@@ -1,11 +1,11 @@
-import Underline from "../Underline";
+// import Underline from "../Underline";
 
 const ContactSection = () => (
   <section id="contact">
     <div className="max-w-2xl mx-auto">
       <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-text)]">
         Contact Me
-        <Underline />
+        {/* <Underline /> */}
       </h2>
 
       <form className="grid gap-4" onSubmit={(e) => e.preventDefault()}>
