@@ -4,48 +4,50 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import laptopFrame from "../../assets/apple-macbookpro16-front.png";
 import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 
-const imagePaths = [
+// Separate image paths
+const allImages = [
   "/IntelliCite.png",
+  "/intellciteResponsive.jpeg",
   "/AttendanceProject.png",
+  "/studentManagmentResponsive.jpeg",
   "/ActivationClone.png",
+  "/activationResponsive.jpeg",
   "/unitedairlinesClone.png",
-  "/ProductShop.png",
+  "/unitedAirlinesResponsive.jpeg",
   "/RiyadhSeasonClone.png",
+  "/riyadhResponsive.jpeg",
   "/Todolist.png",
-  "/Weather.png",
+  "/todolistResponsive.jpeg",
 ];
 
+// Filtered image paths
+const laptopImages = allImages.filter((img) => !img.toLowerCase().includes("responsive"));
+const phoneImages = allImages.filter((img) => img.toLowerCase().includes("responsive"));
+
 const HeroSection = () => {
-  const [laptopImage, setLaptopImage] = useState(imagePaths[0]);
-  const [phoneImage, setPhoneImage] = useState(imagePaths[1]);
+  const [laptopIndex, setLaptopIndex] = useState(0);
+  const [phoneIndex, setPhoneIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setLaptopImage((prev) => getNextImage(prev));
-  //     setPhoneImage((prev) => getNextImage(prev));
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLaptopIndex((prev) => (prev + 1) % laptopImages.length);
+      setPhoneIndex((prev) => (prev + 1) % phoneImages.length);
+    }, 5000);
 
-  // const getNextImage = (current: string) => {
-  //   const index = imagePaths.indexOf(current);
-  //   return imagePaths[(index + 1) % imagePaths.length];
-  // };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
       id="hero"
-      className="relative text-center px-4 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-10 "
+      className="relative text-center px-4 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-10"
     >
-      {/* Blur animation background circle */}
-
-      {/* Intro text */}
+      {/* Intro */}
       <div className="mx-auto animate-fade-up text-gray-800 p-6">
         <div className="flex justify-center mb-6">
           <img
             src="/personalPhoto1"
             alt="Talal Alrashedi"
-            title="Talal Alrashedi"
             className="w-40 h-40 rounded-full object-cover border-4 border-indigo-800 shadow-lg"
           />
         </div>
@@ -58,35 +60,14 @@ const HeroSection = () => {
           Software Engineer | Web Developer | Cybersecurity & Data Analyst
         </p>
 
-        {/* Social icons */}
+        {/* Social Icons */}
         <div className="flex justify-center gap-6 text-2xl text-indigo-600 mb-6">
-          <a
-            href="https://github.com/username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-transform transform hover:scale-110"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-transform transform hover:scale-110"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://twitter.com/username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-transform transform hover:scale-110"
-          >
-            <FaTwitter />
-          </a>
+          <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaGithub /></a>
+          <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaLinkedin /></a>
+          <a href="https://twitter.com/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaTwitter /></a>
         </div>
 
-        {/* CV button */}
+        {/* Download CV */}
         <a
           href="/cv/TalalAlrashediCv.pdf"
           download
@@ -96,37 +77,30 @@ const HeroSection = () => {
         </a>
       </div>
 
-      {/* Project preview in device frames */}
+      {/* Device Preview */}
       <div className="relative flex flex-col md:flex-row items-center justify-center mt-10 gap-6">
-        {/* Laptop frame */}
+        {/* Laptop */}
         <div className="relative w-[320px] md:w-[650px]">
-          <img
-            src={laptopFrame}
-            alt="Laptop"
-            className="w-full h-auto object-contain"
-          />
-
-          <div className="absolute top-[11%] left-[10%] w-[80%] h-[78%]  shadow-md">
+          <img src={laptopFrame} alt="Laptop" className="w-full h-auto object-contain" />
+          <div className="absolute top-[11%] left-[10%] w-[80%] h-[78%] overflow-hidden shadow-md rounded-md">
             <img
-              src={laptopImage}
+              src={laptopImages[laptopIndex]}
               alt="Project on laptop"
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
 
-        {/* iPhone frame */}
-        <div className="relative w-[100px] md:w-[160px] -mt-10 md:mt-0 z-10">
+        {/* Phone */}
+        <div className="relative w-[100px] md:w-[170px] -mt-10 md:mt-0 z-10">
           <img
             src={iphoneFrame}
             alt="Phone"
-            className="relative will-change-[top,left] -left-[18px] top-[40px] md:-left-[25px] md:top-[50px] z-50"
+            className="relative w-full h-auto -left-[12px] top-[35px] md:-left-[22px] md:top-[45px] z-10"
           />
-
-          {/* Inner screen for phone */}
-          <div className="absolute top-[13%] left-[12%] w-[76%] h-[74%] overflow-hidden rounded-xl">
+          <div className="absolute top-[18%] left-0 w-[100%] h-[100%] overflow-hidden shadow-md rounded-md">
             <img
-              src={phoneImage}
+              src={phoneImages[phoneIndex]}
               alt="Project on phone"
               className="w-full h-full object-cover"
             />
