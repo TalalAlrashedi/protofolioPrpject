@@ -11,14 +11,13 @@ html {
   scroll-behavior: smooth;
 }
 
- 
-
 /* body {
   @apply bg-gradient-to-br from-white to-indigo-50;
   color: var(--color-text);
 } */
 body {
   background-image: linear-gradient(to bottom right, #ffffff, #eef2ff);
+
   color: var(--color-text);
 }
 

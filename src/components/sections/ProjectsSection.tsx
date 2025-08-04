@@ -1,7 +1,7 @@
 // pages/Projects.jsx
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "../common/ProjectCard.js";
 // import Underline from "../Underline";
-import Underline from "../Underline.jsx";
+import Underline from "../common/Underline.jsx";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
 const projects = [
   {
