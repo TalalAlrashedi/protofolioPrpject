@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="max-w-5xl mx-auto text-center">
         <div className="mb-10">
           <h2 className="text-4xl font-extrabold text-gray-900 flex justify-center items-center gap-2">
-            <FaUserShield className="text-blue-600 text-4xl" />
+
             About Me
           </h2>
           <Underline />
@@ -16,7 +16,7 @@ const AboutSection = () => {
 
         <p className="text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
           I'm{" "}
-          <span className="font-semibold text-blue-700">Talal Alrashedi</span>,
+          <span className="font-semibold text-blue-700">Talal Al Shaban</span>,
           a passionate{" "}
           <span className="text-black font-medium">Software Engineer</span>{" "}
           specialized in building modern, secure, and user-centric web

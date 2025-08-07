@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className=" h-full w-full bg-gray-100 dark:bg-gray-900 py-6 mt-12 text-sm text-gray-600 dark:text-gray-300">
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <p>
-          &copy; {new Date().getFullYear()} Talal Alrashedi. All rights
+          &copy; {new Date().getFullYear()} Talal Al Shaban. All rights
           reserved.
         </p>
 

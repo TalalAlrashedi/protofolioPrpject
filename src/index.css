@@ -7,16 +7,17 @@
   --color-secondary: #372aac;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* body {
   @apply bg-gradient-to-br from-white to-indigo-50;
   color: var(--color-text);
 } */
 body {
-  background-image: linear-gradient(to bottom right, #ffffff, #eef2ff);
+
+    background-color: #f8fafc;
 
   color: var(--color-text);
 }
@@ -35,3 +36,8 @@ body {
 .animate-fade-up {
   animation: fade-up 1s ease-out both;
 }
+
+/* #282A36 for dark mode */
+/* #414258 for hover navbar  */
+/* #7764B0 for btn Downlaod */
+/* #282A36 for cards maybe */

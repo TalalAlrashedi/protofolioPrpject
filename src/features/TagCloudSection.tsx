@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Underline from "../components/common/Underline";
-import AnimatedSection from "../utils/AnimatedSection";
 import { getTagColor } from "../utils/tagColors";
 import { unifiedIcons } from "../utils/iconsMap";
 
@@ -8,20 +7,20 @@ const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
+  hidden: { opacity: 0, scale: 0.9 },
   show: {
     opacity: 1,
     scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 10,
+      type: "tween",
+      duration: 0.3,
+      ease: "easeOut",
     },
   },
 };
@@ -34,10 +33,7 @@ interface TagCloudSectionProps {
 
 const TagCloudSection = ({ id, title, tags }: TagCloudSectionProps) => {
   return (
-    <AnimatedSection
-      id={id}
-      className="max-w-6xl mx-auto px-6 py-16 text-center"
-    >
+    <section id={id} className="max-w-6xl mx-auto px-6 py-16 text-center">
       <h2 className="text-4xl font-bold text-black mb-12 relative inline-block">
         {title}
         <Underline />
@@ -63,7 +59,7 @@ const TagCloudSection = ({ id, title, tags }: TagCloudSectionProps) => {
           </motion.div>
         ))}
       </motion.div>
-    </AnimatedSection>
+    </section>
   );
 };
 

@@ -43,18 +43,18 @@ const HeroSection = () => {
       className="relative text-center px-4 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-10"
     >
       {/* Intro */}
-      <div className="mx-auto animate-fade-up text-gray-800 p-6">
+      <div className="mx-auto animate-fade-up text-gray-800 p-20">
         <div className="flex justify-center mb-6">
           <img
             src="/personalPhoto1"
-            alt="Talal Alrashedi"
+            alt="Talal Al Shaban"
             className="w-40 h-40 rounded-full object-cover border-4 border-indigo-800 shadow-lg"
           />
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
           Hello, I'm{" "}
-          <span className="text-[var(--color-secondary)]">Talal Alrashedi</span>
+          <span className="text-[var(--color-secondary)]">Talal Al Shaban</span>
         </h1>
         <p className="text-lg text-gray-600 mb-8">
           Software Engineer | Web Developer | Cybersecurity & Data Analyst
@@ -78,7 +78,7 @@ const HeroSection = () => {
       </div>
 
       {/* Device Preview */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center mt-10 gap-6">
+      <div className="relative flex flex-col md:flex-row items-center justify-center mt-4 ">
         {/* Laptop */}
         <div className="relative w-[320px] md:w-[670px]">
           <img src={laptopFrame} alt="Laptop" className="w-full h-auto object-contain" />
