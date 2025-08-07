@@ -69,7 +69,7 @@ const HeroSection = () => {
 
         {/* Download CV */}
         <a
-          href="/cv/TalalAlrashediCv.pdf"
+          href="/cv/talalalshaban.pdf"
           download
           className="inline-block bg-[var(--color-secondary)] hover:bg-[#13302b] text-white px-6 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
         >
@@ -80,13 +80,13 @@ const HeroSection = () => {
       {/* Device Preview */}
       <div className="relative flex flex-col md:flex-row items-center justify-center mt-10 gap-6">
         {/* Laptop */}
-        <div className="relative w-[320px] md:w-[650px]">
+        <div className="relative w-[320px] md:w-[670px]">
           <img src={laptopFrame} alt="Laptop" className="w-full h-auto object-contain" />
           <div className="absolute top-[11%] left-[10%] w-[80%] h-[78%] overflow-hidden shadow-md rounded-md">
             <img
               src={laptopImages[laptopIndex]}
               alt="Project on laptop"
-              className="w-full h-full object-cover"
+              className="w-full h-full "
             />
           </div>
         </div>
@@ -96,13 +96,13 @@ const HeroSection = () => {
           <img
             src={iphoneFrame}
             alt="Phone"
-            className="relative w-full h-auto -left-[12px] top-[35px] md:-left-[22px] md:top-[45px] z-10"
+            className="relative -left-[12px] top-[35px] md:-left-[20px] md:top-[45px] z-10"
           />
-          <div className="absolute top-[18%] left-0 w-[100%] h-[100%] overflow-hidden shadow-md rounded-md">
+          <div className="absolute top-[17%] -left-2 w-[85%] h-[100%] overflow-hidden ">
             <img
               src={phoneImages[phoneIndex]}
               alt="Project on phone"
-              className="w-full h-full object-cover"
+              className="w-100 h-[92.5%] rounded-2xl"
             />
           </div>
         </div>
