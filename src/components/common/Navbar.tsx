@@ -1,18 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
   { label: "Home", id: "hero" },
   { label: "About", id: "about" },
   { label: "Projects", id: "projects" },
-  { label: "Courses", id: "courses" },
+  // { label: "Courses", id: "courses" },
   { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
-
+  
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.id);
+    const observers = [];
+  
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (!section) return;
+  
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveId(id);
+          }
+        },
+        {
+          root: null,
+          threshold: 0.3,
+          rootMargin: "0px 0px -40% 0px",
+        }
+      );
+  
+      observer.observe(section);
+      observers.push(observer);
+    });
+  
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
   const handleClick = (id) => {
     setActiveId(id);
     setMenuOpen(false);

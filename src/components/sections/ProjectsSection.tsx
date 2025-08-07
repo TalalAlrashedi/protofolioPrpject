@@ -1,4 +1,3 @@
-// pages/Projects.jsx
 import ProjectCard from "../common/ProjectCard.js";
 // import Underline from "../Underline";
 import Underline from "../common/Underline.jsx";
@@ -7,7 +6,7 @@ const projects = [
   {
     title: "IntelliCite",
     url: "https://intellicite-ui.onrender.com/",
-    image: "public/IntelliCite.png",
+    image: "/IntelliCite.png",
     tags: ["React", "Tailwind", "Node.js", "API", "MongoDB", "Axios"],
     description:
       "AI-powered platform for exploring academic citations, summaries, and citation strength insights.",
@@ -15,7 +14,7 @@ const projects = [
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
-    image: "public/AttendanceProject.png",
+    image: "/AttendanceProject.png",
     tags: [
       "React",
       "Tailwind",
@@ -31,7 +30,7 @@ const projects = [
   {
     title: "Activition Clone",
     url: "https://activitionclonepro.onrender.com/",
-    image: "public/ActivationClone.png",
+    image: "/ActivationClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
       "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
@@ -39,7 +38,7 @@ const projects = [
   {
     title: "United Airlines Clone",
     url: "https://unitedairlines-651s.onrender.com/",
-    image: "public/unitedairlinesClone.png",
+    image: "/unitedairlinesClone.png",
     tags: ["React", "Tailwind", "Node.js", "API"],
     description:
       "Frontend clone of United Airlines with flight search simulation and adaptive UI.",
@@ -47,7 +46,7 @@ const projects = [
   {
     title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
-    image: "public/ProductShop.png",
+    image: "/ProductShop.png",
     tags: ["React", "Tailwind", "Node.js", "API", "Axios"],
     description:
       "E-commerce demo app displaying product listings with responsive UI and API integration.",
@@ -55,7 +54,7 @@ const projects = [
   {
     title: "Riyadh Season Clone",
     url: "https://riyadhseasonclone.onrender.com/",
-    image: "public/RiyadhSeasonClone.png",
+    image: "/RiyadhSeasonClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
       "Modern clone of Riyadh Season website with attractive sections and event showcase.",
@@ -79,7 +78,7 @@ const projects = [
   {
     title: "To-Do List App",
     url: "https://todolistappt.netlify.app/",
-    image: "public/Todolist.png",
+    image: "/Todolist.png",
     tags: ["JavaScript", "Bootstrap", "LocalStorage"],
     description:
       "A clean to-do list app with local storage support and Bootstrap-based design.",
@@ -95,7 +94,7 @@ const projects = [
   {
     title: "Weather App",
     url: "https://weatherapp-frontend-gcel.onrender.com/login",
-    image: "public/Weather.png",
+    image: "/Weather.png",
     tags: [
       "React",
       "Tailwind",
@@ -111,29 +110,31 @@ const projects = [
 ];
 const Projects = () => {
   return (
-    <section id="projects">
-      <div className=" text-[var(--color-text)] px-4 py-20 min-h-screen font-sans">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
-            My Projects
-            <Underline />
-          </h1>
+    <AnimatedSection>
+      <section id="projects" className=" py-20  min-h-screen">
+        <div className=" text-[var(--color-text)] px-4 py-20 ">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
+              My Projects
+              <Underline />
+            </h1>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                url={project.url}
-                image={project.image}
-                tags={project.tags}
-                description={project.description}
-              />
-            ))}
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  url={project.url}
+                  image={project.image}
+                  tags={project.tags}
+                  description={project.description}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 };
 

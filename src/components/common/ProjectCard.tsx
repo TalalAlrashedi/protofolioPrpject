@@ -20,14 +20,18 @@ const ProjectCard = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-50 bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
+      className="rounded-50 bg-white shadow-sm hover:shadow-xl transition-shadow duration-300 "
     >
+      <div className="flex items-center justify-center">
       <img
         src={image}
         alt={title}
+        loading="lazy"
+        className=" h-50  rounded-t-lg"
         style={{ backgroundColor: "var(--color-bg)" }}
-        className="w-full h-48 object-contain rounded-t-xl p-4"
       />
+      </div>
+   
       <div className="p-5 text-black">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
 
