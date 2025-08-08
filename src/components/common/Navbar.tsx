@@ -13,6 +13,9 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
   
+
+  // this for highlighting the active section in the navbar
+  // using IntersectionObserver to detect which section is currently in view
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observers = [];
@@ -29,11 +32,10 @@ const Navbar = () => {
         },
         {
           root: null,
-          threshold: 0.3,
-          rootMargin: "0px 0px -40% 0px",
+          threshold: 0.1,
+          rootMargin: "0px",
         }
       );
-  
       observer.observe(section);
       observers.push(observer);
     });
@@ -42,15 +44,14 @@ const Navbar = () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
-  const handleClick = (id) => {
+
+  // this for scrolling to the section when clicking on the navbar item
+  const handleClick = (id:string) => {
     setActiveId(id);
     setMenuOpen(false);
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    } else if (id === "hero") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    section?.scrollIntoView({behavior:"smooth"});
+    // console.log(section);  
   };
 
   return (

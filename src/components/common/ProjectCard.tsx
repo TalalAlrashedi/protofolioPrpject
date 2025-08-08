@@ -26,38 +26,26 @@ const ProjectCard = ({
       <img
         src={image}
         alt={title}
-        loading="lazy"
+        // loading="lazy"
         className=" h-50  rounded-t-lg"
-        style={{ backgroundColor: "var(--color-bg)" }}
+
       />
       </div>
    
       <div className="p-5 text-black">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
 
-        {/* {description && (
-          <p className="text-sm text-gray-700 p-1 mb-2">{description}</p>
-        )} */}
+   
 
         {description && <p className="text-sm text-gray mb-2">{description}</p>}
 
-        {/* <div className="flex flex-wrap gap-2 mb-4">
-          {tags?.map((tag, i) => (
-            <span
-              key={i}
-              className={`text-xs rounded-full px-1 py-1 ${getTagColor(tag)}`}
-            >
-              {tag}
-            </span>
-          ))}
-        </div> */}
         <div className="flex flex-wrap gap-2 mb-4">
           {tags?.map((tag, i) => (
             <span
               key={i}
               className={`text-xs px-1 py-1 rounded-full ${getTagColor(tag)}`}
             >
-              {tag}t
+              {tag}
             </span>
           ))}
         </div>

@@ -1,7 +1,8 @@
 import ProjectCard from "../common/ProjectCard.js";
-// import Underline from "../Underline";
+
 import Underline from "../common/Underline.jsx";
-import AnimatedSection from "../../utils/AnimatedSection.jsx";
+// import AnimatedSection from "../../utils/AnimatedSection.jsx";
+
 const projects = [
   {
     title: "IntelliCite",
@@ -108,34 +109,32 @@ const projects = [
       "Weather forecasting app with login support and API integration for real-time data.",
   },
 ];
-const Projects = () => {
+const ProjectsSection = () => {
   return (
-    <AnimatedSection>
-      <section id="projects" className=" py-20  min-h-screen">
-        <div className=" text-[var(--color-text)] px-4 py-20 ">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
-              My Projects
-              <Underline />
-            </h1>
+    <section id="projects" className=" py-20">
+      <div className=" text-[var(--color-text)] px-4 py-20 ">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
+            My Projects
+            <Underline />
+          </h1>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  url={project.url}
-                  image={project.image}
-                  tags={project.tags}
-                  description={project.description}
-                />
-              ))}
-            </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                url={project.url}
+                image={project.image}
+                tags={project.tags}
+                description={project.description}
+              />
+            ))}
           </div>
         </div>
-      </section>
-    </AnimatedSection>
+      </div>
+    </section>
   );
 };
 
-export default Projects;
+export default ProjectsSection;
