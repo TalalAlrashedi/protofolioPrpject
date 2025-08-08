@@ -12,18 +12,17 @@ const navItems = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
-  
 
   // this for highlighting the active section in the navbar
   // using IntersectionObserver to detect which section is currently in view
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observers = [];
-  
+
     sectionIds.forEach((id) => {
       const section = document.getElementById(id);
       if (!section) return;
-  
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -39,30 +38,30 @@ const Navbar = () => {
       observer.observe(section);
       observers.push(observer);
     });
-  
+
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
   // this for scrolling to the section when clicking on the navbar item
-  const handleClick = (id:string) => {
+  const handleClick = (id: string) => {
     setActiveId(id);
     setMenuOpen(false);
     const section = document.getElementById(id);
-    section?.scrollIntoView({behavior:"smooth"});
-    // console.log(section);  
+    section?.scrollIntoView({ behavior: "smooth" });
+    // console.log(section);
   };
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md h-20 mb-1">
-      <div className="max-w-6xl mx-auto py-4 flex justify-between items-center md:justify-center">
+    <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
+      <div className="max-w-6xl mx-auto bg-[#f8fafc] md:bg-transparent  py-4 flex justify-between items-center md:justify-center">
         <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
           Talal<span className="text-[var(--color-secondary)]">Tech(TTA)</span>
         </h1>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-10 items-center bg-white bg-opacity-20 p-1 px-2 rounded-full shadow-md">
+        <ul className="hidden md:flex gap-10 items-center bg-white p-1 px-2 rounded-full shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -95,12 +94,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden bg-white bg-opacity-20 flex flex-col items-center px-4 pb-4 space-y-2 text-center rounded-b-2xl shadow-md">
+        <ul className="md:hidden min-h-screen bg-[#f8fafc] bg-opacity-20 flex flex-col items-center px-4 space-y-2 text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`py-2 px-2 transition-all duration-200 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
+                className={`py-3 px-3 text-2xl transition-all duration-200 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
                   activeId === item.id
                     ? "bg-[var(--color-secondary)] text-white"
                     : "text-[var(--color-text)]"
