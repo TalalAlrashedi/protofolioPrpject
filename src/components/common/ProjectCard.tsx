@@ -23,19 +23,16 @@ const ProjectCard = ({
       className="rounded-50 bg-[var(--color-cards)] shadow-sm hover:shadow-xl transition-shadow duration-300 "
     >
       <div className="flex items-center justify-center">
-      <img
-        src={image}
-        alt={title}
-        // loading="lazy"
-        className=" h-50  rounded-t-lg"
-
-      />
+        <img
+          src={image}
+          alt={title}
+          // loading="lazy"
+          className=" h-50  rounded-t-lg"
+        />
       </div>
-   
-      <div className="p-5 text-black">
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
 
-   
+      <div className="p-5 text-black">
+        <h2 className="text-2xl font-semibold mb-2">{title}</h2>
 
         {description && <p className="text-sm text-gray mb-2">{description}</p>}
 

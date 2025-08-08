@@ -5,16 +5,13 @@
   --color-text: #141616;
   --color-navbar: #ffffffee; /* for navbar background */
   --color-secondary: #02866b; /* for btn and navbar hover and my name */
-
-  --color-cards: #ffffff; /* for cards background */
+  --color-mobile-navbar: #f5f5f5; /* for mobile navbar background */
+  --color-cards: #fbfbfb; /* for cards background */
 }
 
-/* body {
-  @apply bg-gradient-to-br from-white to-indigo-50;
-  color: var(--color-text);
-} */
+
 body {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   /* background-image: linear-gradient(to bottom right, #ffffff, #eef2ff); */
 
   color: var(--color-text);

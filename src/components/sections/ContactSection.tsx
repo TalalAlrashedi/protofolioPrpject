@@ -9,18 +9,43 @@ const ContactSection = () => {
   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  // console.log("Service ID:", serviceID);
-  // console.log("Template ID:", templateID);
-  // console.log("Public Key:", publicKey);
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const formData = new FormData(form.current);
+    const name = formData.get("name")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const message = formData.get("message")?.toString().trim();
+
+    if (!name || !email || !message) {
+      Swal.fire({
+        icon: "warning",
+        title: "Incomplete Form",
+        text: "Please fill out all fields before sending.",
+        confirmButtonColor: "#1b3e38",
+      });
+      return; // Stop submission
+    }
+
+    // Simple email format validation (optional)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Email",
+        text: "Please enter a valid email address.",
+        confirmButtonColor: "#1b3e38",
+      });
+      return; // Stop submission
+    }
 
     emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
       () => {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",
-          text: "Thank you for ",
+          text: "Thank you for reaching out!",
           confirmButtonColor: "#1b3e38",
         });
         form.current.reset();
@@ -49,25 +74,25 @@ const ContactSection = () => {
             name="name"
             placeholder="Your Name"
             required
-            className="border border-gray-300 px-4 py-2 rounded bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl bg-transparent text-black placeholder-gray-400"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
             required
-            className="border border-gray-300 px-4 py-2 rounded bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows={5}
             required
-            className="border border-gray-300 px-4 py-2 rounded bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] resize-none border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
           />
           <button
             type="submit"
-            className="bg-[var(--color-text)] text-white px-6 py-2 hover:cursor-pointer  transition"
+            className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-white p-4 hover:cursor-pointer transition"
           >
             Send Message
           </button>

@@ -55,9 +55,9 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className=" bg-[#f8fafc] md:bg-transparent md:justify-evenly  py-4 px-3 flex justify-between ">
+      <div className=" bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly  py-4 px-3 flex justify-between ">
         <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
-          Talal<span className="text-[var(--color-secondary)]">Tech(TTA)</span>
+          Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
         </h1>
 
         {/* Desktop Nav */}
@@ -94,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden min-h-screen bg-[#f8fafc] bg-opacity-20 py-5 flex flex-col items-center px-4 space-y-4 text-center rounded-b-2xl shadow-md">
+        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-5 flex flex-col items-center px-4 space-y-4 text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
