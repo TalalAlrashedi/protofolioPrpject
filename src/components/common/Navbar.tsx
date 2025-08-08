@@ -49,9 +49,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
+    <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1 ">
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly py-4 px-3 flex justify-between">
-        <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
+        <h1 className="text-xl font-bold text-black md:absolute left-9 top-7">
           Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
         </h1>
 

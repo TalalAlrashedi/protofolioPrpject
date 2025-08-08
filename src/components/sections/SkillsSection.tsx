@@ -11,7 +11,7 @@ const skills = [
 ];
 
 const SkillsSection = () => (
-  <TagCloudSection id="skills" title="Skills" tags={skills} />
+  <TagCloudSection id="skills"  title="Skills" tags={skills} />
 );
 
 export default SkillsSection;

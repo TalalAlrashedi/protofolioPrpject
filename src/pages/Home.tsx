@@ -27,16 +27,18 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-
-      <main >
-        <HeroSection  />
+      <main>
+        <HeroSection />
         <AboutSection />
-        <SkillsSection />
-        <ToolsSection />
+        <div className=" max-w-6xl mx-auto md:px-6 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8  text-white ">
+          {" "}
+          <SkillsSection />
+          <ToolsSection />
+        </div>
+
         <ProjectsSection />
         <ContactSection />
       </main>
-
 
       <Footer />
     </div>
