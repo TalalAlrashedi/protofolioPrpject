@@ -4,7 +4,7 @@ import AnimatedSection from "../../utils/AnimatedSection.jsx";
 
 const AboutSection = () => {
   return (
-    <AnimatedSection id="about" className="relative py-24 px-6 md:px-12">
+    <AnimatedSection id="about" className="mt-8 py-20 px-6 md:px-12">
       <div className="max-w-5xl mx-auto text-center">
         <div className="mb-10">
           <h2 className="text-4xl font-extrabold text-gray-900 flex justify-center items-center gap-2">
