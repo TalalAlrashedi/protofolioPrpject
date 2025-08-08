@@ -1,4 +1,3 @@
-import { FaUserShield } from "react-icons/fa";
 import Underline from "../common/Underline.jsx";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
 
