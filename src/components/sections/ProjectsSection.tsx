@@ -1,7 +1,6 @@
 import ProjectCard from "../common/ProjectCard.js";
-
 import Underline from "../common/Underline.jsx";
-// import AnimatedSection from "../../utils/AnimatedSection.jsx";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -109,13 +108,17 @@ const projects = [
       "Weather forecasting app with login support and API integration for real-time data.",
   },
 ];
+
+
 const ProjectsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className=" py-20">
       <div className=" text-[var(--color-text)] px-4 py-20 ">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
-            My Projects
+            {t("projects")}
             <Underline />
           </h1>
 

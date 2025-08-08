@@ -1,0 +1,32 @@
+{
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+  "toggle_dark": "Dark Mode",
+  "toggle_light": "Light Mode",
+  "language": "Language",
+  "about_title": "About Me",
+  "about_description_1": "I'm",
+  "about_name": "Talal Al Shaban",
+  "about_profession": "Software Engineer",
+  "about_text": "a passionate Software Engineer specialized in building modern, secure, and user-centric web applications.",
+  "about_text2": "I blend frontend development with cybersecurity awareness and data analysis to deliver efficient, scalable digital solutions.",
+  "about_text3": "Whether it’s crafting clean interfaces with React and Tailwind CSS, or integrating backend logic with Node.js — I’m all about bringing ideas to life securely and beautifully.",
+  "certificates": "Certificates",
+  "years_experience": "Years Experience",
+  "projects": "Projects",
+
+  "contact_title": "Contact Me",
+  "contact_name_placeholder": "Your Name",
+  "contact_email_placeholder": "Your Email",
+  "contact_message_placeholder": "Your Message",
+  "contact_send_button": "Send Message",
+
+  "hero_greeting": "Hello, I'm",
+  "hero_name": "Talal Al Shaban",
+  "hero_professions": "Software Engineer | Web Developer | Cybersecurity & Data Analyst",
+  "download_cv": "Download CV",
+  "skills": "Skills",
+  "tools": "Tools"
+}

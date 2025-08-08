@@ -2,9 +2,11 @@ import { useRef } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
   const form = useRef();
+  const { t } = useTranslation();
 
   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -65,27 +67,27 @@ const ContactSection = () => {
     <AnimatedSection id="contact">
       <div className="max-w-2xl p-10 mx-auto">
         <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-text)]">
-          Contact Me
+          {t("contact_title")}
         </h2>
 
         <form ref={form} onSubmit={sendEmail} className="grid gap-4">
           <input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder={t("contact_name_placeholder")}
             required
             className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl bg-transparent text-black placeholder-gray-400"
           />
           <input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder={t("contact_email_placeholder")}
             required
             className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
           />
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder={t("contact_message_placeholder")}
             rows={5}
             required
             className="border outline-[var(--color-secondary)] resize-none border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
@@ -94,7 +96,7 @@ const ContactSection = () => {
             type="submit"
             className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-white p-4 hover:cursor-pointer transition"
           >
-            Send Message
+            {t("contact_send_button")}
           </button>
         </form>
       </div>
