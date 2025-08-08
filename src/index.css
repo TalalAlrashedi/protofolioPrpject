@@ -3,8 +3,9 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #141616;
-  --color-navbar-text: #fafafa;
-  --color-secondary: #372aac;
+  --color-navbar: #ffffffee;
+  --color-secondary: #372aac; /* for btn and navbar hover and my name */
+  --color-cards: #ffffff;
 }
 
 /* body {

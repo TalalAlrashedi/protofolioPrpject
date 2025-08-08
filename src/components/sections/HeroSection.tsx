@@ -97,7 +97,7 @@ const HeroSection = () => {
         </div>
   
         {/* Phone */}
-        <div className="relative w-[100px] md:w-[170px] -mt-1 md:mt-0 z-10 mt-5">
+        <div className="relative w-[100px] md:ml-3 md:w-[170px] md:mt-1 z-10 mt-5">
           <img
             src={iphoneFrame}
             alt="Phone"

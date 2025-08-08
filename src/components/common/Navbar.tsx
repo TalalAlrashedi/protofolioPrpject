@@ -94,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden min-h-screen bg-[#f8fafc] bg-opacity-20 flex flex-col items-center px-4 space-y-2 text-center rounded-b-2xl shadow-md">
+        <ul className="md:hidden min-h-screen bg-[#f8fafc] bg-opacity-20 py-5 flex flex-col items-center px-4 space-y-4 text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

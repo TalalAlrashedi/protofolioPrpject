@@ -20,7 +20,7 @@ const ProjectCard = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-50 bg-white shadow-sm hover:shadow-xl transition-shadow duration-300 "
+      className="rounded-50 bg-[var(--color-cards)] shadow-sm hover:shadow-xl transition-shadow duration-300 "
     >
       <div className="flex items-center justify-center">
       <img
