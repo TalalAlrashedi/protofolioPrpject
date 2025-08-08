@@ -20,7 +20,7 @@ const AboutSection = () => {
 
         <p className="text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto mb-16">
           I'm{" "}
-          <span className="font-semibold text-blue-700">Talal Al Shaban</span>, a passionate{" "}
+          <span className="font-semibold text-[var(--color-secondary)]">Talal Al Shaban</span>, a passionate{" "}
           <span className="text-black font-medium">Software Engineer</span>{" "}
           specialized in building modern, secure, and user-centric web
           applications.

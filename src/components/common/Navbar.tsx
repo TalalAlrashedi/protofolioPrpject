@@ -55,13 +55,13 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className="max-w-6xl mx-auto bg-[#f8fafc] md:bg-transparent  py-4 flex justify-between items-center md:justify-center">
+      <div className=" bg-[#f8fafc] md:bg-transparent md:justify-evenly  py-4 px-3 flex justify-between ">
         <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
           Talal<span className="text-[var(--color-secondary)]">Tech(TTA)</span>
         </h1>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-10 items-center bg-white p-1 px-2 rounded-full shadow-md">
+        <ul className="hidden md:flex gap-10 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-1 px-2 rounded-full shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

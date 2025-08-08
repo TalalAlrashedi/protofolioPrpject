@@ -40,7 +40,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative px-4  overflow-hidden min-h-screen flex flex-col items-center justify-center gap-10 mt-5"
+      className="relative px-4 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
     >
       {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
@@ -56,7 +56,7 @@ const HeroSection = () => {
           </p>
   
           {/* Social Icons */}
-          <div className="flex justify-center md:justify-start gap-6 text-2xl text-indigo-600 mb-6">
+          <div className="flex justify-center md:justify-start gap-6 text-2xl text-[var(--color-secondary)] mb-6">
             <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaGithub /></a>
             <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaLinkedin /></a>
             <a href="https://twitter.com/username" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110"><FaTwitter /></a>
@@ -73,11 +73,11 @@ const HeroSection = () => {
         </div>
   
         {/* Right - Profile Image */}
-        <div className="flex-shrink-0 flex justify-center md:justify-end order-1 md:order-2">
+        <div className="flex-shrink-0 flex py-8 justify-center md:justify-end order-1 md:order-2">
           <img
             src="/personalPhoto1"
             alt="Talal Al Shaban"
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-indigo-800 shadow-lg"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
           />
         </div>
       </div>

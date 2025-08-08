@@ -3,9 +3,10 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #141616;
-  --color-navbar: #ffffffee;
-  --color-secondary: #372aac; /* for btn and navbar hover and my name */
-  --color-cards: #ffffff;
+  --color-navbar: #ffffffee; /* for navbar background */
+  --color-secondary: #02866b; /* for btn and navbar hover and my name */
+
+  --color-cards: #ffffff; /* for cards background */
 }
 
 /* body {
@@ -13,7 +14,7 @@
   color: var(--color-text);
 } */
 body {
-  background-color: #f8fafc;
+  background-color: #F5F5F5;
   /* background-image: linear-gradient(to bottom right, #ffffff, #eef2ff); */
 
   color: var(--color-text);
