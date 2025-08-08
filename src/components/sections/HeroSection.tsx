@@ -97,11 +97,11 @@ const HeroSection = () => {
         </div>
   
         {/* Phone */}
-        <div className="relative w-[100px] md:w-[170px] -mt-10 md:mt-0 z-10">
+        <div className="relative mt-5 w-[100px] md:w-[170px] -mt-1 md:mt-0 z-10">
           <img
             src={iphoneFrame}
             alt="Phone"
-            className="relative -left-[12px] top-[35px] md:-left-[20px] md:top-[45px] z-10"
+            className="relative  md:-left-[20px] md:top-[45px] z-10"
           />
           <div className="absolute top-[17%] -left-2 w-[85%] h-[100%] overflow-hidden">
             <img
