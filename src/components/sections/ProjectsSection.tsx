@@ -115,9 +115,9 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className=" py-20">
-      <div className=" text-[var(--color-text)] px-4 py-20 ">
+      <div className="  px-4 py-20 ">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-text)]">
+          <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-font)]">
             {t("projects")}
             <Underline />
           </h1>

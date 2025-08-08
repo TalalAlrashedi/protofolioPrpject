@@ -15,16 +15,15 @@ const AboutSection = () => {
     <AnimatedSection id="about" className="mt-8 py-20 px-6 md:px-12">
       <div className="max-w-5xl mx-auto text-center">
         <div className="mb-10">
-          <h2 className="text-4xl font-extrabold text-gray-900 flex justify-center items-center gap-2">
+          <h2 className="text-4xl font-extrabold text-[var(--color-font)]flex justify-center items-center gap-2">
             {t("about_title")}
           </h2>
           <Underline />
         </div>
 
-        <p className="text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto mb-16">
+        <p className="text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
           {t("about_description_1")}{" "}
           <span className="font-semibold text-[var(--color-secondary)]">{t("about_name")}</span>,{" "}
-          <span className="text-black font-medium">{t("about_profession")}</span>{" "}
           {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}

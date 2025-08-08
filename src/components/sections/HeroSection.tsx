@@ -46,14 +46,14 @@ const HeroSection = () => {
       {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
         {/* Left - Text + Social */}
-        <div className="flex flex-col items-center md:items-start text-gray-800 order-2 sm:order-1">
+        <div className="flex flex-col items-center md:items-start text-[var(--color-font)] order-2 sm:order-1">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight ">
             {t("hero_greeting")}
             <span className="block text-[var(--color-secondary)]">
               {t("hero_name")}
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-6 text-center md:text-left">
+          <p className="text-lg text-[var(--color-font)] mb-6 text-center md:text-left">
             {t("hero_professions")}
           </p>
 
@@ -89,7 +89,7 @@ const HeroSection = () => {
           <a
             href="/cv/talalalshaban.pdf"
             download
-            className="inline-block bg-[var(--color-secondary)] hover:bg-[#13302b] text-white px-6 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
+            className="inline-block bg-[var(--color-secondary)] hover:opacity-80 text-white px-6 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
           >
             {t("download_cv")}
           </a>

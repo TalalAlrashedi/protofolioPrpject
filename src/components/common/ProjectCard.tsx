@@ -32,7 +32,7 @@ const ProjectCard = ({
         />
       </div>
 
-      <div className="p-5 text-black">
+      <div className="p-5 text-[var(--color-font)]">
         <h2 className="text-2xl font-semibold mb-2">{title}</h2>
         <hr className="border-t-2 border-gray-300 mb-2" />
         {description && <p className="text-sm text-gray mb-2">{description}</p>}
@@ -51,11 +51,11 @@ const ProjectCard = ({
         <div className="flex flex-wrap gap-2 mb-4"></div>
         <button
           type="button"
-          className="flex items-center gap-2 text-sm text-blue-500 font-medium bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded transition"
+          className="flex items-center justify-center gap-2 text-sm text-blue-500 font-medium bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded transition"
 
         >
           {/* Eye icon from react-icons */}
-          <FiEye className="h-4 w-4" />
+          <FiEye className="h-4 w-4 " />
           View Page
         </button>
       </div>

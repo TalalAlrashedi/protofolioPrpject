@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
 import { useTranslation } from "react-i18next";
+import Underline from "../common/Underline.jsx";
 
 const ContactSection = () => {
   const form = useRef();
@@ -66,8 +67,9 @@ const ContactSection = () => {
   return (
     <AnimatedSection id="contact">
       <div className="max-w-2xl p-10 mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-text)]">
+        <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-font)]">
           {t("contact_title")}
+          <Underline />
         </h2>
 
         <form ref={form} onSubmit={sendEmail} className="grid gap-4">
@@ -94,7 +96,7 @@ const ContactSection = () => {
           />
           <button
             type="submit"
-            className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-white p-4 hover:cursor-pointer transition"
+            className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-[var(--color-font)] p-4 hover:cursor-pointer transition hover:opacity-70"
           >
             {t("contact_send_button")}
           </button>
