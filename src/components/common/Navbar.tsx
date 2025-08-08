@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiHome, HiUser, HiFolderOpen, HiPhone } from "react-icons/hi";
 
 const navItems = [
-  { label: "Home", id: "hero" },
-  { label: "About", id: "about" },
-  { label: "Projects", id: "projects" },
-  // { label: "Courses", id: "courses" },
-  { label: "Contact", id: "contact" },
+  { label: "Home", id: "hero", icon: <HiHome className="inline-block mr-2 text-xl" /> },
+  { label: "About", id: "about", icon: <HiUser className="inline-block mr-2 text-xl" /> },
+  { label: "Projects", id: "projects", icon: <HiFolderOpen className="inline-block mr-2 text-xl" /> },
+  { label: "Contact", id: "contact", icon: <HiPhone className="inline-block mr-2 text-xl" /> },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
 
-  // this for highlighting the active section in the navbar
-  // using IntersectionObserver to detect which section is currently in view
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observers = [];
@@ -44,35 +41,33 @@ const Navbar = () => {
     };
   }, []);
 
-  // this for scrolling to the section when clicking on the navbar item
-  const handleClick = (id: string) => {
+  const handleClick = (id) => {
     setActiveId(id);
     setMenuOpen(false);
     const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
-    // console.log(section);
   };
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className=" bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly  py-4 px-3 flex justify-between ">
+      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly py-4 px-3 flex justify-between">
         <h1 className="text-xl font-bold text-black md:absolute left-6 top-4">
           Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
         </h1>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-10 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-1 px-2 rounded-full shadow-md">
+        <ul className="hidden md:flex gap-6 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-2 px-3 rounded-full shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`py-2 px-2 transition-all duration-400 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
+                className={`flex items-center py-2 px-4 transition-all duration-400 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black  hover:cursor-pointer ${
                   activeId === item.id
-                    ? " bg-[var(--color-secondary)] text-white"
+                    ? "bg-[var(--color-secondary)]  text-white"
                     : "text-[var(--color-text)]"
                 }`}
               >
-                {item.label}
+                {item.icon} {item.label}
               </button>
             </li>
           ))}
@@ -99,13 +94,13 @@ const Navbar = () => {
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`py-3 px-3 text-2xl transition-all duration-200 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
+                className={`flex items-center py-3 px-3 text-2xl transition-all duration-200 ease-in-out hover:bg-[var(--color-secondary)] rounded-2xl hover:text-white hover:cursor-pointer ${
                   activeId === item.id
                     ? "bg-[var(--color-secondary)] text-white"
                     : "text-[var(--color-text)]"
                 }`}
               >
-                {item.label}
+                {item.icon} {item.label}
               </button>
             </li>
           ))}
