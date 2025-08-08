@@ -15,6 +15,7 @@ const Navbar = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
     i18n.changeLanguage(newLang);
+    localStorage.setItem("i18nextLng", newLang); 
   };
 
   useEffect(() => {
@@ -86,17 +87,23 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1 ">
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly py-4 px-3 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-black md:absolute left-9 top-7">
-          Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
-        </h1>
+      <h1
+  className="text-xl font-bold text-black md:absolute top-7"
+  style={{
+    left: i18n.language === "en" ? "2.25rem" /* left-9 */ : "auto",
+    right: i18n.language === "ar" ? "2.25rem" /* right-9 */ : "auto",
+  }}
+>
+  Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
+</h1>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-2 px-3 rounded-full shadow-md">
+        <ul className="hidden md:flex gap-6 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-3 px-3 rounded-full shadow-md ">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`flex items-center py-2 px-4 transition-all duration-400 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
+                className={`flex items-center py-2 px-2  transition-all duration-400 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
                   activeId === item.id
                     ? "bg-[var(--color-secondary)] text-white"
                     : "text-[var(--color-text)]"
