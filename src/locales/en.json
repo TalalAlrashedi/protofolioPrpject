@@ -7,12 +7,10 @@
   "toggle_light": "Light Mode",
   "language": "Language",
   "about_title": "About Me",
-  "about_description_1": "I'm",
   "about_name": "Talal Al Shaban",
   "about_profession": "Software Engineer",
-  "about_text": "a passionate Software Engineer specialized in building modern, secure, and user-centric web applications.",
-  "about_text2": "I blend frontend development with cybersecurity awareness and data analysis to deliver efficient, scalable digital solutions.",
-  "about_text3": "Whether it’s crafting clean interfaces with React and Tailwind CSS, or integrating backend logic with Node.js — I’m all about bringing ideas to life securely and beautifully.",
+  "about_text": "Software engineer specialized in building modern and secure web applications focused on user experience. I work on front-end development with an interest in cybersecurity and data analysis to deliver effective digital solutions.",
+  "about_text2": "I hold several certified certificates in cybersecurity and IT, which support my expertise in securing applications and protecting data.",
   "certificates": "Certificates",
   "years_experience": "Years Experience",
   "projects": "Projects",
@@ -29,7 +27,6 @@
   "download_cv": "Download CV",
   "skills": "Skills",
   "tools": "Tools",
-
   "courses": {
     "title": "Courses",
     "date": "Date",

@@ -21,7 +21,7 @@ const ProjectCard = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-2xl bg-[var(--color-cards)] shadow-sm hover:shadow-xl transition-shadow duration-300 "
+      className="rounded-2xl border border-[var(--color-secondary)] bg-[var(--color-cards)] shadow-md hover:shadow-xl transition-shadow duration-300  "
     >
       <div className="flex items-center justify-center">
         <img
@@ -32,7 +32,7 @@ const ProjectCard = ({
         />
       </div>
 
-      <div className="p-5 text-[var(--color-font)]">
+      <div className="p-5 text-[var(--color-font)] ">
         <h2 className="text-2xl font-semibold mb-2">{title}</h2>
         <hr className="border-t-2 border-gray-300 mb-2" />
         {description && <p className="text-sm text-gray mb-2">{description}</p>}

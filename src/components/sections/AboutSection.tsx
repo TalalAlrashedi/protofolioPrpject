@@ -12,8 +12,8 @@ const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
-    <AnimatedSection id="about" className="mt-8 py-20 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto text-center">
+    <AnimatedSection id="about" className="mt-8 py-20 px-6 md:px-12 ">
+      <div className="max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-8 shadow-lg border border-[var(--color-secondary)]">
         <div className="mb-10">
           <h2 className="text-4xl font-extrabold text-[var(--color-font)]flex justify-center items-center gap-2">
             {t("about_title")}
@@ -22,15 +22,14 @@ const AboutSection = () => {
         </div>
 
         <p className="text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
-          {t("about_description_1")}{" "}
+
           <span className="font-semibold text-[var(--color-secondary)]">
             {t("about_name")}
           </span>
           , {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}
-          <br className="hidden md:block" />
-          {t("about_text3")}
+    
         </p>
 
         <div className="flex justify-center gap-10 flex-wrap">
