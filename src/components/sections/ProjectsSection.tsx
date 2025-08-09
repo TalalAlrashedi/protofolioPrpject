@@ -6,7 +6,7 @@ const projects = [
   {
     title: "IntelliCite",
     url: "https://intellicite-ui.onrender.com/",
-    image: "/IntelliCite.png",
+    image: "project/IntelliCite.png",
     tags: ["React", "Tailwind", "Node.js", "API", "MongoDB", "Axios"],
     description:
       "AI-powered platform for exploring academic citations, summaries, and citation strength insights.",
@@ -14,7 +14,7 @@ const projects = [
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
-    image: "/AttendanceProject.png",
+    image: "project/AttendanceProject.png",
     tags: [
       "React",
       "Tailwind",
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Activition Clone",
     url: "https://activitionclonepro.onrender.com/",
-    image: "/ActivationClone.png",
+    image: "project/ActivationClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
       "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "United Airlines Clone",
     url: "https://unitedairlines-651s.onrender.com/",
-    image: "/unitedairlinesClone.png",
+    image: "project/unitedairlinesClone.png",
     tags: ["React", "Tailwind", "Node.js", "API"],
     description:
       "Frontend clone of United Airlines with flight search simulation and adaptive UI.",
@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
-    image: "/ProductShop.png",
+    image: "project/ProductShop.png",
     tags: ["React", "Tailwind", "Node.js", "API", "Axios"],
     description:
       "E-commerce demo app displaying product listings with responsive UI and API integration.",
@@ -54,7 +54,7 @@ const projects = [
   {
     title: "Riyadh Season Clone",
     url: "https://riyadhseasonclone.onrender.com/",
-    image: "/RiyadhSeasonClone.png",
+    image: "project/RiyadhSeasonClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
       "Modern clone of Riyadh Season website with attractive sections and event showcase.",
@@ -78,7 +78,7 @@ const projects = [
   {
     title: "To-Do List App",
     url: "https://todolistappt.netlify.app/",
-    image: "/Todolist.png",
+    image: "project/Todolist.png",
     tags: ["JavaScript", "Bootstrap", "LocalStorage"],
     description:
       "A clean to-do list app with local storage support and Bootstrap-based design.",
@@ -94,7 +94,7 @@ const projects = [
   {
     title: "Weather App",
     url: "https://weatherapp-frontend-gcel.onrender.com/login",
-    image: "/Weather.png",
+    image: "project/Weather.png",
     tags: [
       "React",
       "Tailwind",
