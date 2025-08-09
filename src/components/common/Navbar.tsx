@@ -15,7 +15,7 @@ const Navbar = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
     i18n.changeLanguage(newLang);
-    localStorage.setItem("i18nextLng", newLang); 
+    localStorage.setItem("i18nextLng", newLang);
   };
 
   useEffect(() => {
@@ -47,6 +47,18 @@ const Navbar = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
+
+  // 🔹 Dark Mode state
+  const [darkMode, setDarkMode] = useState(false);
+
+  // 🔹 Apply dark mode class to HTML tag when state changes
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
@@ -85,28 +97,28 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1 ">
-      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:justify-evenly py-4 px-3 flex justify-between items-center">
-      <h1
-  className="text-xl font-bold text-black md:absolute top-7"
-  style={{
-    left: i18n.language === "en" ? "2.25rem" /* left-9 */ : "auto",
-    right: i18n.language === "ar" ? "2.25rem" /* right-9 */ : "auto",
-  }}
->
-  Talal<span className="text-[var(--color-secondary)]">Tech(TAS)</span>
-</h1>
+    <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
+      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-4 px-3 flex items-center justify-between relative">
+        {/* Logo */}
+        <img
+          src="/src/assets/logo2.png"
+          alt="TalalTech Logo"
+          className="w-28 h-auto"
+          style={{
+            order: i18n.language === "ar" ? 2 : 1, // logo on right for Arabic, left for English
+          }}
+        />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 md:justify-evenly md:items-center bg-[var(--color-navbar)] p-3 px-3 rounded-full shadow-md ">
+        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-6 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`flex items-center py-2 px-2  transition-all duration-400 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
+                className={`flex items-center py-2 px-2 transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] text-white"
-                    : "text-[var(--color-text)]"
+                    ? "bg-[var(--color-secondary)] text-white hover:cursor-pointer"
+                    : "text-[var(--color-text)] hover:cursor-pointer hover:bg-gray-200 hover:text-black"
                 }`}
               >
                 {i18n.language === "ar" ? (
@@ -124,21 +136,33 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* زر تبديل اللغة */}
+          {/* Language and Dark Mode Buttons */}
           <li>
             <button
               onClick={toggleLanguage}
-              className="ml-4 py-2 px-4 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
-              aria-label="Toggle Language"
+              className="py-2 px-4 bg-[var(--color-secondary)] text-white rounded-full hover:cursor-pointer hover:opacity-75 transition"
             >
               {i18n.language === "en" ? "AR" : "EN"}
             </button>
           </li>
+          <li>
+            <button
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="py-2 px-4 bg-[var(--color-secondary)] hover:cursor-pointer text-white rounded-full hover:opacity-75 transition"
+            >
+              {darkMode ? "☀️" : "🌙"}
+            </button>
+          </li>
         </ul>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle Button */}
         <button
-          className="md:hidden text-black focus:outline-none"
+          className={`md:hidden focus:outline-none ${
+            darkMode ? "text-white" : "text-black"
+          }`}
+          style={{
+            order: i18n.language === "ar" ? 2 : 1, // burger left for Arabic, right for English
+          }}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -177,7 +201,19 @@ const Navbar = () => {
               </button>
             </li>
           ))}
-          {/* زر تبديل اللغة في القائمة الجوال */}
+
+          {/* Dark Mode Toggle */}
+          <li>
+            <button
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? "Light" : "Dark"}
+            </button>
+          </li>
+
+          {/* Language Toggle */}
           <li>
             <button
               onClick={toggleLanguage}

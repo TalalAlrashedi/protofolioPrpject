@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #ffffff;
+  --color-bg: #f5f5f5;
   --color-text: #141616;
   --color-navbar: #ffffffee; /* for navbar background */
   --color-secondary: #02866b; /* for btn and navbar hover and my name */
