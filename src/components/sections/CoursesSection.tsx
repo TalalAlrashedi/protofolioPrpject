@@ -30,21 +30,21 @@ const courses: Course[] = [
     id: 3,
     key: "networkPenTest",
     imageUrl: "/Courses/penetrationtestingjpeg.jpeg",
-    tags: ["Cybersecurity", "هجوم"],
+    tags: ["Cybersecurity"],
     date: "2024-02-04 - 2024-03-01",
   },
   {
     id: 4,
     key: "webAppPenTest",
     imageUrl: "/Courses/webApplication.jpeg",
-    tags: ["Cybersecurity", "هجوم"],
+    tags: ["Cybersecurity"],
     date: "2024-04-21 - 2024-05-16",
   },
   {
     id: 5,
     key: "digitalForensics",
     imageUrl: "/Courses/digital.png",
-    tags: ["Cybersecurity", "دفاع"],
+    tags: ["Cybersecurity"],
     date: "2024-06-30 - 2024-07-28",
   },
   {
@@ -58,7 +58,7 @@ const courses: Course[] = [
     id: 7,
     key: "cyberFundamentals",
     imageUrl: "/Courses/cyberBootcamp.jpeg",
-    tags: ["Cybersecurity", "هجوم", "دفاع"],
+    tags: ["Cybersecurity"],
     date: "2025-03-16 - 2025-03-29",
   },
 ];
@@ -94,33 +94,30 @@ const CoursesSection = () => {
     return (
       <section
         id="courses"
-        className="py-12 px-6 max-w-6xl mx-auto relative"
+        className="py-12 px-6 max-w-6xl mx-auto relative bg-[var(--color-cards)] rounded-3xl p-8 shadow-lg border border-[var(--color-secondary)] "
         dir={i18n.language === "ar" ? "rtl" : "ltr"}
       >
-        <h1
-          className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6"
-        >
+        <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
           {t("courses.title")}
         </h1>
         <Underline />
-  
+
         {/* أزرار الأسهم */}
         <button
           onClick={scrollLeft}
-          aria-label={i18n.language === "ar" ? "تمرير لليسار" : "Scroll Left"}
-          className="absolute top-1/2 left-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:bg-[var(--color-secondary-dark)] transition z-10"
+          className="absolute top-1/2 left-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
         >
           <HiChevronLeft className="w-6 h-6" />
         </button>
-  
+
         <button
           onClick={scrollRight}
           aria-label={i18n.language === "ar" ? "تمرير لليمين" : "Scroll Right"}
-          className="absolute top-1/2 right-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:bg-[var(--color-secondary-dark)] transition z-10"
+          className="absolute top-1/2 right-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
         >
           <HiChevronRight className="w-6 h-6" />
         </button>
-  
+
         <div
           ref={scrollRef}
           className={`mt-8 flex space-x-6 overflow-x-auto scrollbar-hide ${

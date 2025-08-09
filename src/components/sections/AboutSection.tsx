@@ -22,14 +22,12 @@ const AboutSection = () => {
         </div>
 
         <p className="text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
-
-          <span className="font-semibold text-[var(--color-secondary)]">
+          <span className="  text-[var(--color-introduce)] text-2xl mb-3">
             {t("about_name")}
           </span>
           , {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}
-    
         </p>
 
         <div className="flex justify-center gap-10 flex-wrap">

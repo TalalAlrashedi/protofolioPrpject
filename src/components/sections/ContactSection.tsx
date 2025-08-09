@@ -78,21 +78,21 @@ const ContactSection = () => {
             name="name"
             placeholder={t("contact_name_placeholder")}
             required
-            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl bg-transparent text-[var(--color-font)] placeholder-gray-400"
           />
           <input
             type="email"
             name="email"
             placeholder={t("contact_email_placeholder")}
             required
-            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-[var(--color-font)] placeholder-gray-400"
           />
           <textarea
             name="message"
             placeholder={t("contact_message_placeholder")}
             rows={5}
             required
-            className="border outline-[var(--color-secondary)] resize-none border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-black placeholder-gray-400"
+            className="border outline-[var(--color-secondary)] resize-none border-gray-300 px-4 py-4 rounded-3xl  bg-transparent text-[var(--color-font)] placeholder-gray-400"
           />
           <button
             type="submit"

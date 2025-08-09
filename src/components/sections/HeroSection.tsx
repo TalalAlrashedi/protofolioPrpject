@@ -49,7 +49,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-center md:items-start text-[var(--color-font)] order-2 sm:order-1">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight ">
             {t("hero_greeting")}
-            <span className="block text-[var(--color-secondary)]">
+            <span className="block text-[var(--color-introduce)]">
               {t("hero_name")}
             </span>
           </h1>

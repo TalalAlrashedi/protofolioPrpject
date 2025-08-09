@@ -189,7 +189,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-5 flex flex-col items-center px-4 space-y-4 text-center rounded-b-2xl shadow-md">
+        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-6 text-2xl text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -222,8 +222,8 @@ const Navbar = () => {
               className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
               aria-label="Toggle Dark Mode"
             >
-              {darkMode ? "Light" : "Dark"}
-            </button>
+          {darkMode ? '🌙 Dark' : '☀️ Light'}
+          </button>
           </li>
 
           {/* Language Toggle */}

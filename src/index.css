@@ -8,16 +8,18 @@
   --color-mobile-navbar: #f5f5f5; /* for mobile navbar background */
   --color-cards: #fbfbfb; /* for cards background */
   --color-font: #000000; /* for text color */
+  --color-introduce:#02866b;
 }
 
 .dark {
-  --color-bg: #282A36;
+  --color-bg: #222325;
   --color-text: #e0e0e0;
   --color-navbar: #414258;
   --color-secondary: #7764B0;
-  --color-mobile-navbar: #121212;
+  --color-mobile-navbar: #222325;
   --color-cards: #414258;
   --color-font: #ffffff; /* for text color */
+  --color-introduce:#c6b3ff;
 }
 
 
