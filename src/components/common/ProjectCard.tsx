@@ -1,5 +1,6 @@
 import { getTagColor } from "../../utils/tagColors";
-import { FiEye } from "react-icons/fi"; // Import Eye icon from react-icons
+import { FiEye } from "react-icons/fi";
+import { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -16,23 +17,38 @@ const ProjectCard = ({
   tags,
   description,
 }: ProjectCardProps) => {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="rounded-2xl border border-[var(--color-secondary)] bg-[var(--color-cards)] shadow-md hover:shadow-xl transition-shadow duration-300  "
+      className="relative rounded-2xl border border-[var(--color-secondary)] bg-[var(--color-cards)] shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex items-center justify-center">
+      <div className="relative flex items-center justify-center">
         <img
           src={image}
           alt={title}
           loading="lazy"
-          className=" h-50  rounded-t-lg"
+          className="h-50 rounded-t-lg"
         />
+
+        {hovered && (
+          <button
+            type="button"
+            className="absolute top-2 right-2 flex items-center justify-center gap-2 text-sm text-blue-500 font-medium bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded transition"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <FiEye className="h-4 w-4" />
+            View Page
+          </button>
+        )}
       </div>
 
-      <div className="p-5 text-[var(--color-font)] ">
+      <div className="p-5 text-[var(--color-font)]">
         <h2 className="text-2xl font-semibold mb-2">{title}</h2>
         <hr className="border-t-2 border-gray-300 mb-2" />
         {description && <p className="text-sm text-gray mb-2">{description}</p>}
@@ -47,17 +63,6 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-
-        <div className="flex flex-wrap gap-2 mb-4"></div>
-        <button
-          type="button"
-          className="flex items-center justify-center gap-2 text-sm text-blue-500 font-medium bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded transition"
-
-        >
-          {/* Eye icon from react-icons */}
-          <FiEye className="h-4 w-4 " />
-          View Page
-        </button>
       </div>
     </a>
   );

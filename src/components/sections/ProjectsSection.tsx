@@ -1,6 +1,7 @@
 import ProjectCard from "../common/ProjectCard.js";
 import Underline from "../common/Underline.jsx";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 const projects = [
   {
@@ -109,12 +110,13 @@ const projects = [
   },
 ];
 
-
 const ProjectsSection = () => {
   const { t } = useTranslation();
+  const [showAll, setShowAll] = useState(false);
+  const visibleProject = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section id="projects" className=" py-20">
+    <section dir="ltr" id="projects" className=" py-20">
       <div className="  px-4 py-20 ">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12 text-[var(--color-font)]">
@@ -123,7 +125,7 @@ const ProjectsSection = () => {
           </h1>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
-            {projects.map((project, index) => (
+            {visibleProject.map((project, index) => (
               <ProjectCard
                 key={index}
                 title={project.title}
@@ -133,6 +135,18 @@ const ProjectsSection = () => {
                 description={project.description}
               />
             ))}
+          </div>
+          <div>
+            {!showAll && (
+              <div className="text-center py-3">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="px-6 py-2 mt-3 text-center rounded-full border border-[var(--color-secondary)] text-[var(--color-font)] hover:bg-[var(--color-secondary)] hover:text-white transition"
+                >
+                 {t("showAll")}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
