@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import laptopFrame from "../../assets/apple-macbookpro16-front.png";
 import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
+import { BsTwitterX } from "react-icons/bs";
+
 
 
 const allImages = [
@@ -60,7 +62,7 @@ const HeroSection = () => {
           {/* Social Icons */}
           <div className="flex justify-center md:justify-start gap-6 text-2xl text-[var(--color-secondary)] mb-6">
             <a
-              href="https://github.com/username"
+              href="https://github.com/TalalAlrashedi"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition-transform transform hover:scale-110"
@@ -68,7 +70,7 @@ const HeroSection = () => {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/username"
+              href="https://www.linkedin.com/in/talal-alshaban-3a2127273/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition-transform transform hover:scale-110"
@@ -76,12 +78,12 @@ const HeroSection = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://twitter.com/username"
+              href="https://x.com/t_a_a5"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-black transition-transform transform hover:scale-110"
             >
-              <FaTwitter />
+              <BsTwitterX />
             </a>
           </div>
 
