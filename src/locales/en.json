@@ -28,5 +28,39 @@
   "hero_professions": "Software Engineer | Web Developer | Cybersecurity & Data Analyst",
   "download_cv": "Download CV",
   "skills": "Skills",
-  "tools": "Tools"
+  "tools": "Tools",
+
+  "courses": {
+    "title": "Courses",
+    "date": "Date",
+    "fullstackJS": {
+      "title": "Fullstack Web Application Development Bootcamp using JavaScript",
+      "description": "A comprehensive bootcamp focusing on building web applications using JavaScript on both client and server sides, including interactive UI development, database management, and utilizing modern fullstack technologies to build practical ready-to-use projects."
+    },
+    "networkPlus": {
+      "title": "Network+",
+      "description": "Students are trained on the Network+ course by CompTIA, which introduces fundamental networking concepts and prepares learners for future technologies like Microsoft or Cisco."
+    },
+    "networkPenTest": {
+      "title": "Network Penetration Testing",
+      "description": "This bootcamp aims to teach network penetration testing, vulnerability assessment, finding security flaws in applications, and sniffing devices connected to the same local network using various tools and techniques."
+    },
+    "webAppPenTest": {
+      "title": "Web Application Penetration Testing Bootcamp",
+      "description": "This bootcamp teaches web application penetration testing and vulnerability assessment, qualifying participants to earn the professional certifications eWPTv2 and eWPTX by eLearnsecurity."
+    },
+    "digitalForensics": {
+      "title": "Digital Forensics Analysis",
+      "description": "A course specialized in digital forensic analysis helping you understand digital evidence collection and analysis, preparing trainees for the professional eCDFP certification by eLearnsecurity."
+    },
+    "grcIntro": {
+      "title": "Introduction to Governance, Risk, and Compliance (GRC)",
+      "description": "Aims to enable trainees to understand the fundamentals and importance of governance, risk management, and compliance in organizations, providing knowledge and tools for risk assessment and regulatory adherence."
+    },
+    "cyberFundamentals": {
+      "title": "Cybersecurity Fundamentals Bootcamp",
+      "description": "This bootcamp covers cybersecurity basics and penetration testing with a focus on protecting systems and vulnerability assessment. Participants become qualified for the CompTIA eJPT certification from INE."
+    }
+
+}
 }
