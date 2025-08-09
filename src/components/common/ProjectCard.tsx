@@ -27,7 +27,7 @@ const ProjectCard = ({
         <img
           src={image}
           alt={title}
-          // loading="lazy"
+          loading="lazy"
           className=" h-50  rounded-t-lg"
         />
       </div>

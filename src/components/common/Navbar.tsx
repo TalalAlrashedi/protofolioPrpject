@@ -6,6 +6,7 @@ import {
   HiUser,
   HiFolderOpen,
   HiPhone,
+  HiBookOpen
 } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 
@@ -39,10 +40,16 @@ const Navbar = () => {
       icon: <HiFolderOpen className="inline-block mr-2 text-xl" />,
     },
     {
+      label: t("courses.title"),
+      id: "courses",
+      icon: <HiBookOpen className="inline-block mr-2 text-xl" />,
+    },
+    {
       label: t("contact"),
       id: "contact",
       icon: <HiPhone className="inline-block mr-2 text-xl" />,
     },
+  
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -107,7 +114,7 @@ const Navbar = () => {
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
         {/* Logo */}
         <img
-          src="/src/assets/logo2.png"
+          src="/src/assets/logo1.png"
           alt="TalalTech Logo"
           className="w-28 h-auto"
           style={{
@@ -116,7 +123,7 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-6 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-4 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

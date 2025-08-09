@@ -65,7 +65,7 @@ const ContactSection = () => {
   };
 
   return (
-    <AnimatedSection id="contact">
+    <AnimatedSection id="contact" className="mt-10 py-20">
       <div className="max-w-2xl p-10 md:w-full mx-auto bg-[var(--color-cards)] w-90  rounded-3xl shadow-md">
         <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-font)]">
           {t("contact_title")}

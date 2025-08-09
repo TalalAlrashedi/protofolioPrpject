@@ -47,3 +47,11 @@ body {
 /* #414258 for hover navbar  */
 /* #7764B0 for btn Downlaod */
 /* #282A36 for cards maybe */
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

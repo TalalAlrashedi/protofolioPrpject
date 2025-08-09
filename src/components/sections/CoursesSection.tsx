@@ -67,59 +67,69 @@ const CoursesSection = () => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    // ضبط اتجاه الصفحة ديناميكياً حسب اللغة
+
     if (i18n.language === "ar") {
       document.documentElement.setAttribute("dir", "rtl");
     } else {
       document.documentElement.setAttribute("dir", "ltr");
     }
   }, [i18n.language]);
+
+  
   return (
-    <section className="py-20 px-6 max-w-4xl mx-auto"   dir={i18n.language === "ar" ? "rtl" : "ltr"}
->
-      <h1
-        className="text-4xl font-extrabold text-[var(--color-font)] text-center"
-        style={{ marginBottom: "1rem" }}
-      >
-        {t("courses.title")}
-      </h1>
-      <Underline />
-      <ul className="space-y-8 mt-8">
-        {courses.map((course) => (
-          <li
-            key={course.id}
-            className="border border-[var(--color-secondary)] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-          >
-            {course.imageUrl && (
-              <img
-                src={course.imageUrl}
-                alt={t(`courses.${course.key}.title`)}
-                className="w-48 h-28 object-cover mb-4 rounded"
-              />
-            )}
-            <h2 className="text-2xl font-semibold text-[var(--color-font)] mb-2">
-              {t(`courses.${course.key}.title`)}
-            </h2>
-            <p className="text-[var(--color-font)] mb-3 leading-relaxed">
-              {t(`courses.${course.key}.description`)}
-            </p>
-            <p className="text-sm text-[var(--color-secondary)] mb-3">
-              {t("courses.date")}: {course.date}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {course.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="bg-[var(--color-secondary)] text-white text-xs font-semibold px-3 py-1 rounded"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <section
+    id="courses"
+    className="py-12 px-6 max-w-6xl mx-auto"
+    dir={i18n.language === "ar" ? "rtl" : "ltr"}
+  >
+    <h1
+      className="text-4xl  font-extrabold text-[var(--color-font)] text-center mb-6"
+    >
+      {t("courses.title")}
+    </h1>
+    <Underline />
+  
+    <div
+      className={`mt-8 flex space-x-6 overflow-x-auto scrollbar-hide ${
+        i18n.language === "ar" ? "space-x-reverse" : ""
+      }`}
+      style={{
+        scrollSnapType: "x mandatory ",
+        direction: i18n.language === "ar" ? "rtl" : "ltr",
+      }}
+    >
+      {courses.map((course) => (
+        <div
+          key={course.id}
+          className="flex-shrink-0 w-72 border border-[var(--color-secondary)] rounded-lg shadow-md p-6 m-5 hover:shadow-lg transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
+        >
+          {course.imageUrl && (
+            <img
+              src={course.imageUrl}
+              alt={t(`courses.${course.key}.title`)}
+              className="w-full h-40 object-cover rounded mb-4"
+            />
+          )}
+          <h2 className="text-2xl font-semibold text-[var(--color-font)] mb-4 text-center">
+            {t(`courses.${course.key}.title`)}
+          </h2>
+          <p className="text-sm text-[var(--color-secondary)] mb-3 text-center">
+            {t("courses.date")}: {course.date}
+          </p>
+          <div className="flex justify-center flex-wrap gap-2">
+            {course.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-[var(--color-secondary)] text-white text-xs font-semibold px-3 py-1 rounded"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
   );
 };
 

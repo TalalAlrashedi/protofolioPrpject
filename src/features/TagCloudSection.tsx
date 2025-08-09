@@ -33,7 +33,7 @@ interface TagCloudSectionProps {
 
 const TagCloudSection = ({ id, title, tags }: TagCloudSectionProps) => {
   return (
-    <section id={id} className="max-w-6xl mx-auto px-6 py-16 text-center">
+    <section id={id} className="max-w-6xl mx-auto px-6 py-1 text-center">
       <h2 className="text-4xl font-bold text-[var(--color-font)] mb-12 relative inline-block">
         {title}
         <Underline />

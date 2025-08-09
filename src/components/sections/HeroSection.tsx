@@ -6,18 +6,18 @@ import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 
 
 const allImages = [
-  "/IntelliCite.png",
-  "/intellciteResponsive.jpeg",
-  "/AttendanceProject.png",
-  "/studentManagmentResponsive.jpeg",
-  "/ActivationClone.png",
-  "/activationResponsive.jpeg",
-  "/unitedairlinesClone.png",
-  "/unitedAirlinesResponsive.jpeg",
-  "/RiyadhSeasonClone.png",
-  "/riyadhResponsive.jpeg",
-  "/Todolist.png",
-  "/todolistResponsive.jpeg",
+  "project/IntelliCite.png",
+  "project/intellciteResponsive.jpeg",
+  "project/AttendanceProject.png",
+  "project/studentManagmentResponsive.jpeg",
+  "project/ActivationClone.png",
+  "project/activationResponsive.jpeg",
+  "project/unitedairlinesClone.png",
+  "project/unitedAirlinesResponsive.jpeg",
+  "project/RiyadhSeasonClone.png",
+  "project/riyadhResponsive.jpeg",
+  "project/Todolist.png",
+  "project/todolistResponsive.jpeg",
 ];
 
 // Filtered image paths
