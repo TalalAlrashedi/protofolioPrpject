@@ -3,9 +3,9 @@ import Underline from "../common/Underline.jsx";
 import AnimatedSection from "../../utils/AnimatedSection.jsx";
 
 const stats = [
-  { key: "certificates", value: 6, color: "text-blue-800" },
-  { key: "years_experience", value: 1, color: "text-green-800" },
-  { key: "projects", value: 11, color: "text-purple-800" },
+  { key: "certificates", value: 6, color: "text-blue-600" },
+  { key: "years_experience", value: 1, color: "text-green-600" },
+  { key: "projects", value: 11, color: "text-purple-600" },
 ];
 
 const AboutSection = () => {
@@ -23,8 +23,10 @@ const AboutSection = () => {
 
         <p className="text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
           {t("about_description_1")}{" "}
-          <span className="font-semibold text-[var(--color-secondary)]">{t("about_name")}</span>,{" "}
-          {t("about_text")}
+          <span className="font-semibold text-[var(--color-secondary)]">
+            {t("about_name")}
+          </span>
+          , {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}
           <br className="hidden md:block" />
@@ -35,10 +37,14 @@ const AboutSection = () => {
           {stats.map(({ key, value, color }) => (
             <div
               key={key}
-              className="w-40 bg-transparent rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default"
+              className="w-40 bg-[var(--color-cards)] rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default"
             >
-              <h3 className={`text-5xl font-extrabold mb-3 ${color}`}>{value}</h3>
-              <p className="text-gray-600 uppercase tracking-widest text-sm">{t(key)}</p>
+              <h3 className={`text-5xl font-extrabold mb-3 ${color}`}>
+                {value}
+              </h3>
+              <p className="text-[var(--color-font)] uppercase tracking-widest text-sm">
+                {t(key)}
+              </p>
             </div>
           ))}
         </div>

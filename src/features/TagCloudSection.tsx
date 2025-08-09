@@ -40,7 +40,7 @@ const TagCloudSection = ({ id, title, tags }: TagCloudSectionProps) => {
       </h2>
 
       <motion.div
-        className="flex flex-wrap justify-center gap-4 bg-white shadow-md p-6 rounded-3xl"
+        className="flex flex-wrap justify-center gap-4 bg-[var(--color-cards)] shadow-md p-6 rounded-3xl"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"

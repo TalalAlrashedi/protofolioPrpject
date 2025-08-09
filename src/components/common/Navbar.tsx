@@ -49,7 +49,12 @@ const Navbar = () => {
   const [activeId, setActiveId] = useState("hero");
 
   // 🔹 Dark Mode state
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Get saved mode from localStorage
+    const saved = localStorage.getItem("darkMode");
+    return saved === "true" ? true : false;
+  });
+  
 
   // 🔹 Apply dark mode class to HTML tag when state changes
   useEffect(() => {
@@ -58,6 +63,7 @@ const Navbar = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   useEffect(() => {
@@ -98,7 +104,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-4 px-3 flex items-center justify-between relative">
+      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
         {/* Logo */}
         <img
           src="/src/assets/logo2.png"
@@ -117,7 +123,7 @@ const Navbar = () => {
                 onClick={() => handleClick(item.id)}
                 className={`flex items-center py-2 px-2 transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] text-white hover:cursor-pointer"
+                    ? "bg-[var(--color-secondary)] px-4 text-white hover:cursor-pointer"
                     : "text-[var(--color-text)] hover:cursor-pointer hover:bg-gray-200 hover:text-black"
                 }`}
               >

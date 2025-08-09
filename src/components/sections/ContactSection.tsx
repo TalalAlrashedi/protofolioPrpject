@@ -66,13 +66,13 @@ const ContactSection = () => {
 
   return (
     <AnimatedSection id="contact">
-      <div className="max-w-2xl p-10 mx-auto">
+      <div className="max-w-2xl p-10 md:w-full mx-auto bg-[var(--color-cards)] w-90  rounded-3xl shadow-md">
         <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-font)]">
           {t("contact_title")}
           <Underline />
         </h2>
 
-        <form ref={form} onSubmit={sendEmail} className="grid gap-4">
+        <form ref={form} onSubmit={sendEmail} className="grid gap-6 ">
           <input
             type="text"
             name="name"
@@ -96,7 +96,7 @@ const ContactSection = () => {
           />
           <button
             type="submit"
-            className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-[var(--color-font)] p-4 hover:cursor-pointer transition hover:opacity-70"
+            className="bg-[var(--color-secondary)] mx-auto rounded-3xl text-white p-4 hover:cursor-pointer transition hover:opacity-70"
           >
             {t("contact_send_button")}
           </button>
