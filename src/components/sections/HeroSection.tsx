@@ -43,7 +43,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative px-4 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
+      className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
     >
       {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
@@ -100,7 +100,7 @@ const HeroSection = () => {
         {/* Right - Profile Image */}
         <div className="flex-shrink-0 flex py-8 justify-center md:justify-end order-1 md:order-2">
           <img
-            src="/personalPhoto1"
+            src="/cv/profile4.png"
             alt="Talal Al Shaban"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
           />

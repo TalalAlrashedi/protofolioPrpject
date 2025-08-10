@@ -94,7 +94,7 @@ const CoursesSection = () => {
     return (
       <section
         id="courses"
-        className="py-12 px-6 max-w-6xl mx-auto relative bg-[var(--color-cards)] rounded-3xl p-8 shadow-lg border border-[var(--color-secondary)] "
+        className="py-25 mt-8 px-6 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
         dir={i18n.language === "ar" ? "rtl" : "ltr"}
       >
         <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
