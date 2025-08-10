@@ -34,14 +34,14 @@ interface TagCloudSectionProps {
 
 const TagCloudSection = ({ id, title, tags }: TagCloudSectionProps) => {
   return (
-    <section id={id} className="max-w-6xl mx-auto px-6 py-1 text-center">
+    <section id={id} className="max-w-6xl mx-auto px-6 py-1 text-center ">
       <h2 className="text-4xl font-bold text-[var(--color-font)] mb-12 relative inline-block">
         {title}
         <Underline />
       </h2>
 
       <motion.div
-        className="flex flex-wrap justify-center gap-4 bg-[var(--color-cards)] shadow-md p-6 rounded-3xl"
+        className="flex flex-wrap justify-center gap-4 bg-[var(--color-cards)] shadow-md p-6 rounded-3xl  border border-[var(--color-secondary)]"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"

@@ -10,12 +10,12 @@ type Course = {
   date: string;
 };
 
-
 const courses: Course[] = [
   {
     id: 1,
     key: "fullstackJS",
-    imageUrl: "/Courses/javascript.jpg",
+    imageUrl:
+      "https://graffersid.com/wp-content/uploads/2023/08/MERN-Stack-scaled.webp",
     tags: ["تطوير مواقع الويب", "Fullstack"],
     date: "2025-04-13 - 2025-07-10",
   },
@@ -27,11 +27,28 @@ const courses: Course[] = [
     date: "2023-12-03 - 2024-02-02",
   },
   {
+    id: 8,
+    key: "AWS",
+    imageUrl:
+      "https://www.opentext.com/assets/images/partners/opentext-aws-logo-cover-416x274.png",
+    tags: ["Cloud Computing"],
+    date: "2024-04-13 - 2024-04-26",
+  },
+  {
     id: 3,
     key: "networkPenTest",
     imageUrl: "/Courses/penetrationtestingjpeg.jpeg",
     tags: ["Cybersecurity"],
     date: "2024-02-04 - 2024-03-01",
+  },
+
+  {
+    id: 9,
+    key: "Jira",
+    imageUrl:
+      "https://www.logicgate.com/wp-content/smush-webp/plt-jira-01-hero-01.png.webp",
+    tags: ["Project Management"],
+    date: "2025-7-25 - 2025-08-10",
   },
   {
     id: 4,
@@ -40,6 +57,7 @@ const courses: Course[] = [
     tags: ["Cybersecurity"],
     date: "2024-04-21 - 2024-05-16",
   },
+
   {
     id: 5,
     key: "digitalForensics",
@@ -63,104 +81,104 @@ const courses: Course[] = [
   },
 ];
 const CoursesSection = () => {
-    const { t, i18n } = useTranslation();
-    const scrollRef = useRef<HTMLDivElement>(null);
-  
-    useEffect(() => {
-      if (i18n.language === "ar") {
-        document.documentElement.setAttribute("dir", "rtl");
-      } else {
-        document.documentElement.setAttribute("dir", "ltr");
-      }
-    }, [i18n.language]);
-  
-    const scrollLeft = () => {
-        if (scrollRef.current) {
-          scrollRef.current.scrollBy({
-            left: -300, 
-            behavior: "smooth",
-          });
-        }
-      };
-      
-      const scrollRight = () => {
-        if (scrollRef.current) {
-          scrollRef.current.scrollBy({
-            left: 300, 
-            behavior: "smooth",
-          });
-        }
-      };
-    return (
-      <section
-        id="courses"
-        className="py-25 mt-8 px-6 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
-        dir={i18n.language === "ar" ? "rtl" : "ltr"}
-      >
-        <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
-          {t("courses.title")}
-        </h1>
-        <Underline />
+  const { t, i18n } = useTranslation();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-        {/* أزرار الأسهم */}
-        <button
-          onClick={scrollLeft}
-          className="absolute top-1/2 left-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
-        >
-          <HiChevronLeft className="w-6 h-6" />
-        </button>
+  useEffect(() => {
+    if (i18n.language === "ar") {
+      document.documentElement.setAttribute("dir", "rtl");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+    }
+  }, [i18n.language]);
 
-        <button
-          onClick={scrollRight}
-          aria-label={i18n.language === "ar" ? "تمرير لليمين" : "Scroll Right"}
-          className="absolute top-1/2 right-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
-        >
-          <HiChevronRight className="w-6 h-6" />
-        </button>
-
-        <div
-          ref={scrollRef}
-          className={`mt-8 flex space-x-6 overflow-x-auto scrollbar-hide ${
-            i18n.language === "ar" ? "space-x-reverse" : ""
-          }`}
-          style={{
-            scrollSnapType: "x mandatory",
-            direction: i18n.language === "ar" ? "rtl" : "ltr",
-          }}
-        >
-          {courses.map((course) => (
-            <div
-              key={course.id}
-              className="flex-shrink-0 w-72 border border-[var(--color-secondary)] rounded-lg shadow-md p-6 m-5 hover:shadow-lg transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
-            >
-              {course.imageUrl && (
-                <img
-                  src={course.imageUrl}
-                  alt={t(`courses.${course.key}.title`)}
-                  className="w-full h-40 object-cover rounded mb-4"
-                />
-              )}
-              <h2 className="text-2xl font-semibold text-[var(--color-font)] mb-4 text-center">
-                {t(`courses.${course.key}.title`)}
-              </h2>
-              <p className="text-sm text-[var(--color-secondary)] mb-3 text-center">
-                {t("courses.date")}: {course.date}
-              </p>
-              <div className="flex justify-center flex-wrap gap-2">
-                {course.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-[var(--color-secondary)]  text-white text-xs font-semibold px-3 py-1 rounded-3xl"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+    }
   };
-  
-  export default CoursesSection;
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+    }
+  };
+  return (
+    <section
+      id="courses"
+      className="py-25 mt-8 px-6 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
+      dir={i18n.language === "ar" ? "rtl" : "ltr"}
+    >
+      <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
+        {t("courses.title")}
+      </h1>
+      <Underline />
+
+      {/* أزرار الأسهم */}
+      <button
+        onClick={scrollLeft}
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
+      >
+        <HiChevronLeft className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={scrollRight}
+        aria-label={i18n.language === "ar" ? "تمرير لليمين" : "Scroll Right"}
+        className="absolute top-1/2 right-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
+      >
+        <HiChevronRight className="w-6 h-6" />
+      </button>
+
+      <div
+        ref={scrollRef}
+        className={`mt-8 flex space-x-6 overflow-x-auto scrollbar-hide ${
+          i18n.language === "ar" ? "space-x-reverse" : ""
+        }`}
+        style={{
+          scrollSnapType: "x mandatory",
+          direction: i18n.language === "ar" ? "rtl" : "ltr",
+        }}
+      >
+        {courses.map((course) => (
+          <div
+            key={course.id}
+            className="flex-shrink-0 w-72 border outline-[var(--color-secondary)] border-gray-300 shadow-md p-6 m-5 hover:shadow-lg rounded-2xl transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
+          >
+            {course.imageUrl && (
+              <img
+                src={course.imageUrl}
+                alt={t(`courses.${course.key}.title`)}
+                className="w-full h-40 object-cover rounded mb-4"
+              />
+            )}
+            <h2 className="text-2xl font-semibold text-[var(--color-font)] mb-4 text-center">
+              {t(`courses.${course.key}.title`)}
+            </h2>
+            <p className="text-sm text-[var(--color-secondary)] mb-3 text-center">
+              {t("courses.date")}: {course.date}
+            </p>
+            <div className="flex justify-center flex-wrap gap-2">
+              {course.tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="bg-[var(--color-secondary)]  text-white text-xs font-semibold px-3 py-1 rounded-3xl"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default CoursesSection;

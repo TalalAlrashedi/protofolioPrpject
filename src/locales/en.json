@@ -59,6 +59,12 @@
     "cyberFundamentals": {
       "title": "Cybersecurity Fundamentals Bootcamp",
       "description": "This bootcamp covers cybersecurity basics and penetration testing with a focus on protecting systems and vulnerability assessment. Participants become qualified for the CompTIA eJPT certification from INE."
-    }
+    },
+    "AWS": {
+            "title": " AWS Cloud Computing Course"
+          },
+          "Jira": {
+            "title": "Jira atlassian Project Management"
+          }
   }
 }
