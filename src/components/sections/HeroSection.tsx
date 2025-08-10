@@ -107,6 +107,7 @@ const HeroSection = () => {
         <div className="flex-shrink-0 flex py-8 justify-center md:justify-end order-1 md:order-2">
           <img
             src="/cv/profile4.png"
+            loading="lazy"
             alt="Talal Al Shaban"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
           />
