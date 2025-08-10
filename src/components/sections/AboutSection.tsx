@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Underline from "../common/Underline.jsx";
+import Underline from "../common/Underline.tsx";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
 
 const stats = [

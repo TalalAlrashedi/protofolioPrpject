@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
 import { useTranslation } from "react-i18next";
-import Underline from "../common/Underline.jsx";
+import Underline from "../common/Underline.tsx";
 
 const ContactSection = () => {
   const form = useRef<HTMLFormElement | null>(null);

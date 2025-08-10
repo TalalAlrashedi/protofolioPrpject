@@ -1,8 +1,8 @@
 import type {  Variants } from "framer-motion";
 import  { motion } from "framer-motion";
-import Underline from "../components/common/Underline";
-import { getTagColor } from "../utils/tagColors";
-import { unifiedIcons } from "../utils/iconsMap";
+import Underline from "../components/common/Underline.tsx";
+import { getTagColor } from "../utils/tagColors.tsx";
+import { unifiedIcons } from "../utils/iconsMap.tsx";
 
 const containerVariants: Variants = {
   hidden: {},

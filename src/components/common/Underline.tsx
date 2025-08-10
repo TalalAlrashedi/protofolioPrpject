@@ -1,6 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Underline = ({
+interface UnderlineProps {
+  color?: string;
+  width?: string;
+  className?: string;
+}
+
+const Underline: React.FC<UnderlineProps> = ({
   color = "bg-[var(--color-secondary)]",
   width = "w-16",
   className = "",
@@ -12,4 +18,4 @@ const Underline = ({
   );
 };
 
-export default Underline
+export default Underline;

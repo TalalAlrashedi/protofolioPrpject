@@ -1,5 +1,5 @@
 import ProjectCard from "../common/ProjectCard.js";
-import Underline from "../common/Underline.jsx";
+import Underline from "../common/Underline.tsx";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 

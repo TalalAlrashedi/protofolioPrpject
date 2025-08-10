@@ -1,4 +1,4 @@
-import { getTagColor } from "../../utils/tagColors";
+import { getTagColor } from "../../utils/tagColors.tsx";
 import { FiEye } from "react-icons/fi";
 import { useState } from "react";
 

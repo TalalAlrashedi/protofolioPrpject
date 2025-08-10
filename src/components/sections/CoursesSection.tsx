@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Underline from "../common/Underline.jsx";
+import Underline from "../common/Underline.tsx";
 import { useEffect, useRef } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 type Course = {
