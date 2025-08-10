@@ -6,7 +6,7 @@ import {
   HiUser,
   HiFolderOpen,
   HiPhone,
-  HiBookOpen
+  HiBookOpen,
 } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 
@@ -49,11 +49,10 @@ const Navbar = () => {
       id: "contact",
       icon: <HiPhone className="inline-block mr-2 text-xl" />,
     },
-  
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState("hero");
+  const [activeId, setActiveId] = useState<string>("hero");
 
   // 🔹 Dark Mode state
   const [darkMode, setDarkMode] = useState(() => {
@@ -61,7 +60,6 @@ const Navbar = () => {
     const saved = localStorage.getItem("darkMode");
     return saved === "true" ? true : false;
   });
-  
 
   // 🔹 Apply dark mode class to HTML tag when state changes
   useEffect(() => {
@@ -75,52 +73,46 @@ const Navbar = () => {
 
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
-    const observers = [];
-
-    sectionIds.forEach((id) => {
+    const observers: IntersectionObserver[] = [];
+  
+    sectionIds.forEach((id: string) => {
       const section = document.getElementById(id);
       if (!section) return;
-
+  
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
             setActiveId(id);
           }
         },
-        {
-          root: null,
-          threshold: 0.1,
-          rootMargin: "0px",
-        }
+        { root: null, threshold: 0.1, rootMargin: "0px" }
       );
+  
       observer.observe(section);
       observers.push(observer);
     });
-
+  
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, [navItems]);
-
-  const handleClick = (id) => {
+  const handleClick = (id: string) => {
     setActiveId(id);
     setMenuOpen(false);
-    const section = document.getElementById(id) ||  document.getElementById("hero") ;
+    const section = document.getElementById(id) || document.getElementById("hero");
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
-
-  <img
-    src="/src/assets/logo1.png"
-    alt="TalalTech Logo"
-    className="w-28 h-auto"
-    onClick={handleClick}
-    style={{ order: i18n.language === "ar" ? 2 : 1 }}
-  />
-
+        <img
+          src="/src/assets/logo1.png"
+          alt="TalalTech Logo"
+          className="w-28 h-auto"
+          onClick={() => handleClick("hero")}
+          style={{ order: i18n.language === "ar" ? 2 : 1 }}
+        />
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-4 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
@@ -222,8 +214,8 @@ const Navbar = () => {
               className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
               aria-label="Toggle Dark Mode"
             >
-          {darkMode ? '🌙 Dark' : '☀️ Light'}
-          </button>
+              {darkMode ? "🌙 Dark" : "☀️ Light"}
+            </button>
           </li>
 
           {/* Language Toggle */}
