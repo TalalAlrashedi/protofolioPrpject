@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Underline from "../common/Underline.jsx";
 
 const ContactSection = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement | null>(null);
   const { t } = useTranslation();
 
   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -16,13 +16,13 @@ const ContactSection = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    if (!form.current) return; 
-  
+    if (!form.current) return; // نتأكد أن الريف مش فاضي
+
     const formData = new FormData(form.current);
     const name = formData.get("name")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
     const message = formData.get("message")?.toString().trim();
-
+  
     if (!name || !email || !message) {
       Swal.fire({
         icon: "warning",
@@ -30,10 +30,9 @@ const ContactSection = () => {
         text: "Please fill out all fields before sending.",
         confirmButtonColor: "#1b3e38",
       });
-      return; // Stop submission
+      return;
     }
-
-    // Simple email format validation (optional)
+  
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       Swal.fire({
@@ -42,10 +41,10 @@ const ContactSection = () => {
         text: "Please enter a valid email address.",
         confirmButtonColor: "#1b3e38",
       });
-      return; // Stop submission
+      return;
     }
-
-    emailjs.sendForm(serviceID, templateID, form.current!, publicKey).then(
+  
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
       () => {
         Swal.fire({
           icon: "success",
@@ -53,7 +52,7 @@ const ContactSection = () => {
           text: "Thank you for reaching out!",
           confirmButtonColor: "#1b3e38",
         });
-        form.current.reset();
+        form.current?.reset();
       },
       () => {
         Swal.fire({
@@ -65,7 +64,6 @@ const ContactSection = () => {
       }
     );
   };
-
   return (
     <AnimatedSection id="contact" className="mt-10 py-20">
       <div className=" p-10 md:w-[50%] w-100 mx-auto justify-center bg-[var(--color-cards)] flex flex-col items-center  rounded-3xl shadow-md">

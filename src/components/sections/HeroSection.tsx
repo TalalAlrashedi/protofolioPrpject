@@ -49,8 +49,6 @@ const HeroSection = () => {
     exit={{ opacity: 0, y: -50 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
     className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
-      id="hero"
-      className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
     >
       {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
