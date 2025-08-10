@@ -6,7 +6,6 @@ import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 import { BsTwitterX } from "react-icons/bs";
 import DownArrow from "../../utils/DownArrow.js";
 
-
 const allImages = [
   "project/IntelliCite.png",
   "project/intellciteResponsive.jpeg",
@@ -23,13 +22,18 @@ const allImages = [
 ];
 
 // Filtered image paths
-const laptopImages = allImages.filter((img) => !img.toLowerCase().includes("responsive"));
-const phoneImages = allImages.filter((img) => img.toLowerCase().includes("responsive"));
+const laptopImages = allImages.filter(
+  (img) => !img.toLowerCase().includes("responsive")
+);
+const phoneImages = allImages.filter((img) =>
+  img.toLowerCase().includes("responsive")
+);
 
 const HeroSection = () => {
   const [laptopIndex, setLaptopIndex] = useState(0);
   const [phoneIndex, setPhoneIndex] = useState(0);
   const { t } = useTranslation();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,11 +43,13 @@ const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
-  
+
   return (
     <section
-    id="hero"
-    className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center  animate-fade-up justify-center gap-2 mt-5"
+      id="hero"
+      className={`relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5 ${
+        imageLoaded ? "animate-fade-up" : "opacity-0"
+      }`}
     >
       {/* Intro */}
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
@@ -97,18 +103,18 @@ const HeroSection = () => {
           </a>
         </div>
 
-
         {/* Right - Profile Image */}
         <div className="flex-shrink-0 flex py-8 justify-center md:justify-end order-1 md:order-2">
-          <img
-            src="/cv/profile4.png"
-            loading="lazy"
-            alt="Talal Al Shaban"
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
-          />
-        </div>
+        <img
+          src="/cv/profile4.png"
+          alt="Talal Al Shaban"
+          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
+        />
       </div>
-<DownArrow/>
+      </div>
+      <DownArrow />
       {/* Device Preview */}
       <div className="relative flex flex-col md:flex-row items-center justify-center mt-4">
         {/* Laptop */}
@@ -143,8 +149,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      </section>
+    </section>
   );
-  }
+};
 
 export default HeroSection;
