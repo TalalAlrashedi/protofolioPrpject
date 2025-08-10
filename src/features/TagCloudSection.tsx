@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
+import type {  Variants } from "framer-motion";
+import  { motion } from "framer-motion";
 import Underline from "../components/common/Underline";
 import { getTagColor } from "../utils/tagColors";
 import { unifiedIcons } from "../utils/iconsMap";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -12,7 +13,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   show: {
     opacity: 1,

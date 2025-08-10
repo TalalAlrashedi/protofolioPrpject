@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-import AnimatedSection from "../../utils/AnimatedSection.jsx";
+import AnimatedSection from "../../utils/AnimatedSection.tsx";
 import { useTranslation } from "react-i18next";
 import Underline from "../common/Underline.jsx";
 
@@ -13,7 +13,7 @@ const ContactSection = () => {
   const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(form.current);
