@@ -16,15 +16,22 @@ const Home = () => {
   useEffect(() => {
     if (location.state?.scrollToId) {
       const targetId = location.state.scrollToId;
-      const section = document.getElementById(targetId);
-      if (section) {
-        setTimeout(() => {
+  
+      const onLoad = () => {
+        const section = document.getElementById(targetId);
+        if (section) {
           section.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+        }
+      };
+  
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+        return () => window.removeEventListener("load", onLoad);
       }
     }
   }, [location]);
-
   return (
     <div className="min-h-screen flex flex-col">
       <main>

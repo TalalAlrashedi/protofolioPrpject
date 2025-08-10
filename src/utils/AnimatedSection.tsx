@@ -9,7 +9,7 @@ interface AnimatedSectionProps extends Omit<HTMLMotionProps<"section">, "ref"> {
 }
 
 const transition: Transition = {
-  duration: 0.6,
+  duration: 0.2,
   ease: "easeOut",
 };
 

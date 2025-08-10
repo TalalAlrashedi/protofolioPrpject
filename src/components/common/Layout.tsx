@@ -7,36 +7,8 @@ const Layout = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const images = Array.from(document.images);
-    let loadedCount = 0;
-
-    if (images.length === 0) {
-      setLoading(false);
-      return;
-    }
-
-    function onLoadOrError() {
-      loadedCount++;
-      if (loadedCount === images.length) {
-        setLoading(false);
-      }
-    }
-
-    images.forEach((img) => {
-      if (img.complete) {
-        onLoadOrError();
-      } else {
-        img.addEventListener("load", onLoadOrError);
-        img.addEventListener("error", onLoadOrError);
-      }
-    });
-
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", onLoadOrError);
-        img.removeEventListener("error", onLoadOrError);
-      });
-    };
+    const timer = setTimeout(() => setLoading(false), 1200); 
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
