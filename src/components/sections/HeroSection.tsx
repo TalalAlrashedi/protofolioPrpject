@@ -123,7 +123,7 @@ const HeroSection = () => {
             src={laptopFrame}
             alt="Laptop"
             className="w-full h-auto object-contain"
-               loading="lazy"
+
           />
           <div className="absolute top-[11%] left-[10%] w-[80%] h-[78%] overflow-hidden shadow-md rounded-md">
             <img
@@ -139,7 +139,7 @@ const HeroSection = () => {
         <div className="relative w-[100px] md:ml-3 md:w-[170px] md:mt-1 z-10 mt-5">
           <img
             src={iphoneFrame}
-               loading="lazy"
+
             alt="Phone"
             className="relative md:-left-[20px] md:top-[45px] z-10"
           />
