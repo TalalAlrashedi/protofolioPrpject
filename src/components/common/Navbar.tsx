@@ -74,11 +74,11 @@ const Navbar = () => {
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observers: IntersectionObserver[] = [];
-  
+
     sectionIds.forEach((id: string) => {
       const section = document.getElementById(id);
       if (!section) return;
-  
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -87,11 +87,11 @@ const Navbar = () => {
         },
         { root: null, threshold: 0.1, rootMargin: "0px" }
       );
-  
+
       observer.observe(section);
       observers.push(observer);
     });
-  
+
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
@@ -99,7 +99,8 @@ const Navbar = () => {
   const handleClick = (id: string) => {
     setActiveId(id);
     setMenuOpen(false);
-    const section = document.getElementById(id) || document.getElementById("hero");
+    const section =
+      document.getElementById(id) || document.getElementById("hero");
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -181,13 +182,20 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-8 text-2xl text-center rounded-b-2xl shadow-md">
+
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen
+            ? "max-h-screen opacity-100 translate-y-0"
+            : "max-h-0 opacity-0 -translate-y-5"
+        }`}
+      >
+        <ul className="bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-8 text-2xl text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="w-full">
               <button
                 onClick={() => handleClick(item.id)}
-                className={`flex items-center py-4 px-6 transition-all duration-400 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
+                className={`w-full flex items-center justify-center py-4 px-6 transition-all duration-300 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
                   activeId === item.id
                     ? "bg-[var(--color-secondary)] text-white"
                     : "text-[var(--color-text)]"
@@ -208,19 +216,9 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* Dark Mode Toggle */}
-          <li>
-            <button
-              onClick={() => setDarkMode((prev) => !prev)}
-              className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
-              aria-label="Toggle Dark Mode"
-            >
-              {darkMode ? "🌙 Dark" : "☀️ Light"}
-            </button>
-          </li>
-
-          {/* Language Toggle */}
-          <li>
+          {/* Bottom Buttons Row */}
+          <li className="w-full flex justify-between items-center px-4 mt-6">
+            {/* Language Toggle - Left */}
             <button
               onClick={toggleLanguage}
               className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
@@ -228,9 +226,18 @@ const Navbar = () => {
             >
               {i18n.language === "en" ? "AR" : "EN"}
             </button>
+
+            {/* Dark Mode Toggle - Right */}
+            <button
+              onClick={() => setDarkMode((prev) => !prev)}
+              className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? "🌙" : "☀️"}
+            </button>
           </li>
         </ul>
-      )}
+      </div>
     </nav>
   );
 };
