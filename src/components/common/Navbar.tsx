@@ -107,7 +107,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
         <img
-          src="/src/assets/logo1.png"
+          src="src/assets/logo1.png"
           alt="TalalTech Logo"
           className="w-28 h-auto"
           onClick={() => handleClick("hero")}
