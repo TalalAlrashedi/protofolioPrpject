@@ -5,6 +5,7 @@ import ProjectsSection from "../components/sections/ProjectsSection";
 import ContactSection from "../components/sections/ContactSection";
 import Layout from "../components/common/Layout";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

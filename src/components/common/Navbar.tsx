@@ -105,22 +105,22 @@ const Navbar = () => {
   const handleClick = (id) => {
     setActiveId(id);
     setMenuOpen(false);
-    const section = document.getElementById(id);
+    const section = document.getElementById(id) ||  document.getElementById("hero") ;
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
-        {/* Logo */}
-        <img
-          src="/src/assets/logo1.png"
-          alt="TalalTech Logo"
-          className="w-28 h-auto"
-          style={{
-            order: i18n.language === "ar" ? 2 : 1, // logo on right for Arabic, left for English
-          }}
-        />
+
+  <img
+    src="/src/assets/logo1.png"
+    alt="TalalTech Logo"
+    className="w-28 h-auto"
+    onClick={handleClick}
+    style={{ order: i18n.language === "ar" ? 2 : 1 }}
+  />
+
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-4 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
@@ -189,7 +189,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-6 text-2xl text-center rounded-b-2xl shadow-md">
+        <ul className="md:hidden min-h-screen bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-8 text-2xl text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

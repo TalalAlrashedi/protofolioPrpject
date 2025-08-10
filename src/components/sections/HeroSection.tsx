@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import laptopFrame from "../../assets/apple-macbookpro16-front.png";
 import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 import { BsTwitterX } from "react-icons/bs";
+import AnimatedSection from "../../utils/AnimatedSection.jsx";
 
 
 
@@ -41,7 +42,13 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section
+    <AnimatedSection
+    id="hero"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -50 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
       id="hero"
       className="relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5"
     >
@@ -141,7 +148,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+      </AnimatedSection>
   );
   }
 

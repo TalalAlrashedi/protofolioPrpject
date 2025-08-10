@@ -30,7 +30,7 @@ const AboutSection = () => {
           {t("about_text2")}
         </p>
 
-        <div className="flex justify-center gap-10 flex-wrap">
+        <div className=" grid grid-cols-2 md:grid-cols-3 justify-center content-center items-center text-center gap-1 ">
           {stats.map(({ key, value, color }) => (
             <div
               key={key}
