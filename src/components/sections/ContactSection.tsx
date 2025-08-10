@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Underline from "../common/Underline.jsx";
 
 const ContactSection = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
 
   const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -15,7 +15,9 @@ const ContactSection = () => {
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+  
+    if (!form.current) return; 
+  
     const formData = new FormData(form.current);
     const name = formData.get("name")?.toString().trim();
     const email = formData.get("email")?.toString().trim();
@@ -43,7 +45,7 @@ const ContactSection = () => {
       return; // Stop submission
     }
 
-    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+    emailjs.sendForm(serviceID, templateID, form.current!, publicKey).then(
       () => {
         Swal.fire({
           icon: "success",
