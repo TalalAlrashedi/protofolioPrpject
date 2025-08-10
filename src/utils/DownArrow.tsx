@@ -1,5 +1,3 @@
-import React from "react";
-
 const DownArrow = ({ size = 40, color = "var(--color-secondary)" }) => {
   const animationStyle = {
     animation: "bounceDown 1.5s ease-in-out infinite",

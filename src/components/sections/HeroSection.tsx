@@ -5,7 +5,7 @@ import laptopFrame from "../../assets/apple-macbookpro16-front.png";
 import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 import { BsTwitterX } from "react-icons/bs";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
-import DownArrow from "../../utils/DownArrow.jsx";
+import DownArrow from "../../utils/DownArrow.js";
 
 
 const allImages = [
