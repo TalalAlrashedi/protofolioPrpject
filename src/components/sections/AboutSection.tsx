@@ -16,16 +16,16 @@ const AboutSection = () => {
       <div className="w-full max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-6 md:p-8 shadow-lg border border-[var(--color-secondary)]">
         {" "}
         <div className="mb-10">
-          <h2 className="text-4xl font-extrabold text-[var(--color-font)]flex justify-center items-center gap-2">
+          <h2 className="text-4xl font-bold text-[var(--color-font)] flex justify-center items-center gap-2">
             {t("about_title")}
           </h2>
           <Underline />
         </div>
         <p className="text-lg md:text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
-          <span className="text-[var(--color-introduce)] text-xl md:text-2xl mb-3 block">
+          <span className="text-[var(--color-introduce)] text-2xl md:text-3xl mb-3 block font-semibold">
             {t("about_name")}
           </span>
-          , {t("about_text")}
+         {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}
         </p>

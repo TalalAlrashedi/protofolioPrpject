@@ -112,10 +112,10 @@ const CoursesSection = () => {
   return (
     <section
       id="courses"
-      className="py-8 8 px-5 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
+      className="py-22 px-5 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
     >
-      <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
+      <h1 className="text-4xl font-bold text-[var(--color-font)] text-center ">
         {t("courses.title")}
       </h1>
       <Underline />
@@ -149,7 +149,7 @@ const CoursesSection = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="flex-shrink-0 w-70 border outline-[var(--color-secondary)] border-gray-300 shadow-md p-3 m-5 hover:shadow-lg rounded-2xl transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
+            className="flex-shrink-0 w-70 p-6 m-5 bg-[var(--color-cards)] border border-gray-300 rounded-3xl shadow-md transition-shadow duration-300 hover:shadow-xl scroll-snap-align-start group"
           >
             {course.imageUrl && (
               <img
@@ -158,7 +158,7 @@ const CoursesSection = () => {
                 className="w-full h-40 object-cover rounded mb-4"
               />
             )}
-            <h2 className="text-2xl font-semibold text-[var(--color-font)] mb-4 text-center">
+            <h2 className=" font-semibold mb-3 leading-none transition-transform duration-500 text-[var(--color-font)] text-center  group-hover:scale-110">
               {t(`courses.${course.key}.title`)}
             </h2>
             <p className="text-sm text-[var(--color-secondary)] mb-3 text-center">

@@ -8,12 +8,12 @@ interface UnderlineProps {
 
 const Underline: React.FC<UnderlineProps> = ({
   color = "bg-[var(--color-secondary)]",
-  width = "w-16",
+  width = "w-25",
   className = "",
 }) => {
   return (
     <span
-      className={`block ${width} h-1 ${color} mx-auto mt-2 rounded ${className}`}
+      className={`block ${width} ${color} mx-auto mt-2 h-[8px] rounded animate-pulse  ${className}`}
     ></span>
   );
 };

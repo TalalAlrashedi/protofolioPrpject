@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX, HiHome, HiFolderOpen, HiBookOpen } from "react-icons/hi";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
+import { useMemo } from "react";
 
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo1.png";
@@ -21,7 +22,7 @@ const Navbar = () => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
-  const navItems = [
+  const navItems = useMemo(() =>  [
     {
       label: t("home"),
       id: "hero",
@@ -47,7 +48,7 @@ const Navbar = () => {
       id: "contact",
       icon: <FaPhone className="inline-block mr-2 " />,
     },
-  ];
+  ],[t])
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState<string>("hero");
@@ -110,7 +111,7 @@ const Navbar = () => {
       <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:py-5  px-3 flex items-center justify-between relative">
         <img
           src={logo}
-          alt="TalalTech Logo"
+          alt="Talal Tech Logo"
           className="w-28 h-auto"
           onClick={() => handleClick("hero")}
           loading="lazy"
