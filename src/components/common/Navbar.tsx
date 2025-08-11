@@ -31,7 +31,7 @@ const Navbar = () => {
     {
       label: t("about"),
       id: "about",
-      icon: <IoPersonSharp className="inline-block mr-2 " />,
+      icon: <IoPersonSharp className="inline-block mr-2 p-1 " />,
     },
     {
       label: t("projects"),
@@ -46,7 +46,7 @@ const Navbar = () => {
     {
       label: t("contact"),
       id: "contact",
-      icon: <FaPhone className="inline-block mr-2 " />,
+      icon: <FaPhone className="inline-block mr-2 p-1 " />,
     },
   ],[t])
 
