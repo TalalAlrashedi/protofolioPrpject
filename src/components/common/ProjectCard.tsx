@@ -1,6 +1,6 @@
 import { getTagColor } from "../../utils/tagColors.tsx";
 import { FiEye } from "react-icons/fi";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   title: string;
@@ -17,7 +17,7 @@ const ProjectCard = ({
   tags,
   description,
 }: ProjectCardProps) => {
-  const [hovered, setHovered] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <a
@@ -25,8 +25,6 @@ const ProjectCard = ({
       target="_blank"
       rel="noopener noreferrer"
       className="relative rounded-2xl border border-[var(--color-secondary)] bg-[var(--color-cards)] shadow-md hover:shadow-xl hover:scale-105 transform transition duration-300"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <div className="relative flex items-center justify-center">
         <img
@@ -35,17 +33,6 @@ const ProjectCard = ({
           loading="lazy"
           className="h-50 rounded-t-lg"
         />
-
-        {hovered && (
-          <button
-            type="button"
-            className="absolute top-2 right-2 flex items-center justify-center gap-2 text-sm text-blue-500 font-medium bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded transition"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <FiEye className="h-4 w-4" />
-            View Page
-          </button>
-        )}
       </div>
 
       <div className="p-5 text-[var(--color-font)]">
@@ -63,6 +50,14 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
+        <button
+          type="button"
+          className="mt-6 w-max flex items-center justify-center gap-2 text-sm text-blue-600 font-medium bg-blue-50 hover:bg-blue-100 px-2 py-2 mx-auto rounded-full transition"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <FiEye className="h-5 w-5" />
+          {t("goToWebsite")}
+        </button>
       </div>
     </a>
   );

@@ -13,33 +13,34 @@ const AboutSection = () => {
 
   return (
     <AnimatedSection id="about" className="mt-15 py-20 px-6 md:px-12 ">
-      <div className="max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-8 shadow-lg border border-[var(--color-secondary)]">
+      <div className="w-full max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-6 md:p-8 shadow-lg border border-[var(--color-secondary)]">
+        {" "}
         <div className="mb-10">
           <h2 className="text-4xl font-extrabold text-[var(--color-font)]flex justify-center items-center gap-2">
             {t("about_title")}
           </h2>
           <Underline />
         </div>
-
-        <p className="text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
-          <span className="  text-[var(--color-introduce)] text-2xl mb-3">
+        <p className="text-lg md:text-xl leading-relaxed text-[var(--color-font)] max-w-3xl mx-auto mb-16">
+          <span className="text-[var(--color-introduce)] text-xl md:text-2xl mb-3 block">
             {t("about_name")}
           </span>
           , {t("about_text")}
           <br className="hidden md:block" />
           {t("about_text2")}
         </p>
-
-        <div className=" grid grid-cols-2 md:grid-cols-3 justify-center content-center items-center text-center gap-1 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 justify-center justify-items-center text-center gap-6">          {" "}
           {stats.map(({ key, value, color }) => (
             <div
               key={key}
-              className="w-40 bg-[var(--color-cards)] rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default"
+              className="w-full md:w-40 bg-[var(--color-cards)] border border-[var(--color-secondary)] p-3 rounded-lg md:p-5 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default"
             >
-              <h3 className={`text-5xl font-extrabold mb-3 ${color}`}>
+              <h3
+                className={`text-3xl md:text-5xl font-extrabold mb-2 md:mb-3 ${color}`}
+              >
                 {value}
               </h3>
-              <p className="text-[var(--color-font)] uppercase tracking-widest text-sm">
+              <p className="text-[var(--color-font)] uppercase tracking-widest text-xs md:text-sm">
                 {t(key)}
               </p>
             </div>

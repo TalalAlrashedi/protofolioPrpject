@@ -23,7 +23,7 @@ const courses: Course[] = [
     id: 2,
     key: "networkPlus",
     imageUrl: "/Courses/Network.jpeg",
-    tags: ["Networking"],
+    tags: ["Networking", "شبكات"],
     date: "2023-12-03 - 2024-02-02",
   },
   {
@@ -31,14 +31,14 @@ const courses: Course[] = [
     key: "AWS",
     imageUrl:
       "https://www.opentext.com/assets/images/partners/opentext-aws-logo-cover-416x274.png",
-    tags: ["Cloud Computing"],
+    tags: ["Cloud Computing", "الحوسبة السحابية"],
     date: "2024-04-13 - 2024-04-26",
   },
   {
     id: 3,
     key: "networkPenTest",
     imageUrl: "/Courses/penetrationtestingjpeg.jpeg",
-    tags: ["Cybersecurity"],
+    tags: ["Cybersecurity", "الامن السيبراني"],
     date: "2024-02-04 - 2024-03-01",
   },
 
@@ -47,14 +47,14 @@ const courses: Course[] = [
     key: "Jira",
     imageUrl:
       "https://www.logicgate.com/wp-content/smush-webp/plt-jira-01-hero-01.png.webp",
-    tags: ["Project Management"],
+    tags: ["Project Management", "إدارة المشاريع"],
     date: "2025-7-25 - 2025-08-10",
   },
   {
     id: 4,
     key: "webAppPenTest",
     imageUrl: "/Courses/webApplication.jpeg",
-    tags: ["Cybersecurity"],
+    tags: ["Cybersecurity", "الامن السيبراني"],
     date: "2024-04-21 - 2024-05-16",
   },
 
@@ -62,21 +62,21 @@ const courses: Course[] = [
     id: 5,
     key: "digitalForensics",
     imageUrl: "/Courses/digital.png",
-    tags: ["Cybersecurity"],
+    tags: ["Cybersecurity", "الامن السيبراني"],
     date: "2024-06-30 - 2024-07-28",
   },
   {
     id: 6,
     key: "grcIntro",
     imageUrl: "/Courses/Grc.jpeg",
-    tags: ["Foundations"],
+    tags: ["Foundations", "مسار تأسيسي"],
     date: "2024-12-08 - 2024-12-15",
   },
   {
     id: 7,
     key: "cyberFundamentals",
     imageUrl: "/Courses/cyberBootcamp.jpeg",
-    tags: ["Cybersecurity"],
+    tags: ["Cybersecurity", "الامن السيبراني"],
     date: "2025-03-16 - 2025-03-29",
   },
 ];
@@ -112,7 +112,7 @@ const CoursesSection = () => {
   return (
     <section
       id="courses"
-      className="py-25 mt-8 px-6 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
+      className="py-8 8 px-5 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
     >
       <h1 className="text-4xl font-extrabold text-[var(--color-font)] text-center mb-6">
@@ -149,7 +149,7 @@ const CoursesSection = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="flex-shrink-0 w-72 border outline-[var(--color-secondary)] border-gray-300 shadow-md p-6 m-5 hover:shadow-lg rounded-2xl transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
+            className="flex-shrink-0 w-70 border outline-[var(--color-secondary)] border-gray-300 shadow-md p-3 m-5 hover:shadow-lg rounded-2xl transition-shadow duration-300 scroll-snap-align-start bg-[var(--color-cards)]"
           >
             {course.imageUrl && (
               <img
@@ -168,7 +168,7 @@ const CoursesSection = () => {
               {course.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="bg-[var(--color-secondary)]  text-white text-xs font-semibold px-3 py-1 rounded-3xl"
+                  className="bg-[var(--color-secondary)] text-white text-xs font-semibold px-2 py-1 rounded-2xl"
                 >
                   {tag}
                 </span>

@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  HiMenu,
-  HiX,
-  HiHome,
-  HiUser,
-  HiFolderOpen,
-  HiPhone,
-  HiBookOpen,
-} from "react-icons/hi";
+import { HiMenu, HiX, HiHome, HiFolderOpen, HiBookOpen } from "react-icons/hi";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
 
@@ -15,9 +7,6 @@ import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo1.png";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
-
-
-
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -136,7 +125,7 @@ const Navbar = () => {
                 onClick={() => handleClick(item.id)}
                 className={`flex items-center py-3 px-1 transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] px-2 py-2  text-white hover:cursor-pointer"
+                    ? "bg-[var(--color-secondary)] px-3 py-2  text-white hover:cursor-pointer"
                     : "text-[var(--color-text)] hover:cursor-pointer hover:bg-gray-200 hover:text-black"
                 }`}
               >
@@ -169,9 +158,11 @@ const Navbar = () => {
               onClick={() => setDarkMode((prev) => !prev)}
               className="py-3 px-4 bg-[var(--color-secondary)] hover:cursor-pointer text-white rounded-full hover:opacity-75 transition"
             >
-
-              {darkMode ? <MdLightMode className="text-yellow-300"/> : <MdDarkMode className="text-white"/>}
-
+              {darkMode ? (
+                <MdLightMode className="text-yellow-300" />
+              ) : (
+                <MdDarkMode className="text-white" />
+              )}
             </button>
           </li>
         </ul>
@@ -247,7 +238,11 @@ const Navbar = () => {
               className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
               aria-label="Toggle Dark Mode"
             >
-              {darkMode ? <MdLightMode className="text-yellow-300"/> : <MdDarkMode className="text-white"/>}
+              {darkMode ? (
+                <MdLightMode className="text-yellow-300" />
+              ) : (
+                <MdDarkMode className="text-white" />
+              )}
             </button>
           </li>
         </ul>

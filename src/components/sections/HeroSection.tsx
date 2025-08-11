@@ -1,48 +1,13 @@
-import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
-import laptopFrame from "../../assets/apple-macbookpro16-front.png";
-import iphoneFrame from "../../assets/apple-iphone-15-plus-black-portrait.png";
 import { BsTwitterX } from "react-icons/bs";
-import DownArrow from "../../utils/DownArrow.js";
-
-const allImages = [
-  "project/IntelliCite.png",
-  "project/intellciteResponsive.jpeg",
-  "project/AttendanceProject.png",
-  "project/studentManagmentResponsive.jpeg",
-  "project/ActivationClone.png",
-  "project/activationResponsive.jpeg",
-  "project/unitedairlinesClone.png",
-  "project/unitedAirlinesResponsive.jpeg",
-  "project/RiyadhSeasonClone.png",
-  "project/riyadhResponsive.jpeg",
-  "project/Todolist.png",
-  "project/todolistResponsive.jpeg",
-];
-
-// Filtered image paths
-const laptopImages = allImages.filter(
-  (img) => !img.toLowerCase().includes("responsive")
-);
-const phoneImages = allImages.filter((img) =>
-  img.toLowerCase().includes("responsive")
-);
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import DownArrow from "../../utils/DownArrow";
+import DevicePreview from "./DevicePreview.tsx";
 
 const HeroSection = () => {
-  const [laptopIndex, setLaptopIndex] = useState(0);
-  const [phoneIndex, setPhoneIndex] = useState(0);
   const { t } = useTranslation();
   const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLaptopIndex((prev) => (prev + 1) % laptopImages.length);
-      setPhoneIndex((prev) => (prev + 1) % phoneImages.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
@@ -67,28 +32,13 @@ const HeroSection = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center md:justify-start gap-6 text-2xl text-[var(--color-secondary)] mb-6">
-            <a
-              href="https://github.com/TalalAlrashedi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black transition-transform transform hover:scale-110"
-            >
+            <a href="https://github.com/TalalAlrashedi" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
               <FaGithub />
             </a>
-            <a
-              href="https://www.linkedin.com/in/talal-alshaban-3a2127273/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black transition-transform transform hover:scale-110"
-            >
+            <a href="https://www.linkedin.com/in/talal-alshaban-3a2127273/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
               <FaLinkedin />
             </a>
-            <a
-              href="https://x.com/t_a_a5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black transition-transform transform hover:scale-110"
-            >
+            <a href="https://x.com/t_a_a5" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
               <BsTwitterX />
             </a>
           </div>
@@ -105,54 +55,20 @@ const HeroSection = () => {
 
         {/* Right - Profile Image */}
         <div className="flex-shrink-0 flex py-8 justify-center md:justify-end order-1 md:order-2">
-        <img
-          src="/cv/profile4.png"
-          alt="Talal Al Shaban"
-          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
-          onLoad={() => setImageLoaded(true)}
-          loading="lazy"
-        />
+          <img
+            src="/cv/profile4.png"
+            alt="Talal Al Shaban"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
+            onLoad={() => setImageLoaded(true)}
+            loading="lazy"
+          />
+        </div>
       </div>
-      </div>
+
       <DownArrow />
+
       {/* Device Preview */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center mt-4">
-        {/* Laptop */}
-        <div className="relative w-[320px] md:w-[670px]">
-          <img
-            src={laptopFrame}
-            alt="Laptop"
-            className="w-full h-auto object-contain"
-
-          />
-          <div className="absolute top-[11%] left-[10%] w-[80%] h-[78%] overflow-hidden shadow-md rounded-md">
-            <img
-              src={laptopImages[laptopIndex]}
-   loading="lazy"
-              alt="Project on laptop"
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-
-        {/* Phone */}
-        <div className="relative w-[100px] md:ml-3 md:w-[170px] md:mt-1 z-10 mt-5">
-          <img
-            src={iphoneFrame}
-
-            alt="Phone"
-            className="relative md:-left-[20px] md:top-[45px] z-10"
-          />
-          <div className="absolute top-[3.6%] left-[6%] md:top-[17%] md:-left-2 w-[90%] h-[100%]  md:w-[85%] md:h-[100%] overflow-hidden">
-            <img
-               loading="lazy"
-              src={phoneImages[phoneIndex]}
-              alt="Project on phone"
-              className="w-100 h-[92.5%] rounded-xl md:rounded-2xl"
-            />
-          </div>
-        </div>
-      </div>
+      <DevicePreview />
     </section>
   );
 };
