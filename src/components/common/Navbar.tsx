@@ -8,8 +8,17 @@ import {
   HiPhone,
   HiBookOpen,
 } from "react-icons/hi";
+import { IoPersonSharp } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa6";
+
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo1.png";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
+
+
+
+
 const Navbar = () => {
   const { t, i18n } = useTranslation();
 
@@ -32,7 +41,7 @@ const Navbar = () => {
     {
       label: t("about"),
       id: "about",
-      icon: <HiUser className="inline-block mr-2 text-xl" />,
+      icon: <IoPersonSharp className="inline-block mr-2 " />,
     },
     {
       label: t("projects"),
@@ -47,7 +56,7 @@ const Navbar = () => {
     {
       label: t("contact"),
       id: "contact",
-      icon: <HiPhone className="inline-block mr-2 text-xl" />,
+      icon: <FaPhone className="inline-block mr-2 " />,
     },
   ];
 
@@ -71,6 +80,7 @@ const Navbar = () => {
     localStorage.setItem("darkMode", darkMode.toString());
   }, [darkMode]);
 
+  // 🔹 Intersection Observer to track active section
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
     const observers: IntersectionObserver[] = [];
@@ -96,6 +106,8 @@ const Navbar = () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, [navItems]);
+
+  // 🔹 Handle click on nav item
   const handleClick = (id: string) => {
     setActiveId(id);
     setMenuOpen(false);
@@ -106,7 +118,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent py-5 px-3 flex items-center justify-between relative">
+      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:py-5  px-3 flex items-center justify-between relative">
         <img
           src={logo}
           alt="TalalTech Logo"
@@ -117,14 +129,14 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] p-3 px-4 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] py-3 px-5 rounded-full shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`flex items-center py-2 px-2 transition-all rounded-2xl ${
+                className={`flex items-center py-3 px-1 transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] px-4 text-white hover:cursor-pointer"
+                    ? "bg-[var(--color-secondary)] px-2 py-2  text-white hover:cursor-pointer"
                     : "text-[var(--color-text)] hover:cursor-pointer hover:bg-gray-200 hover:text-black"
                 }`}
               >
@@ -155,9 +167,11 @@ const Navbar = () => {
           <li>
             <button
               onClick={() => setDarkMode((prev) => !prev)}
-              className="py-2 px-4 bg-[var(--color-secondary)] hover:cursor-pointer text-white rounded-full hover:opacity-75 transition"
+              className="py-3 px-4 bg-[var(--color-secondary)] hover:cursor-pointer text-white rounded-full hover:opacity-75 transition"
             >
-              {darkMode ? "☀️" : "🌙"}
+
+              {darkMode ? <MdLightMode className="text-yellow-300"/> : <MdDarkMode className="text-white"/>}
+
             </button>
           </li>
         </ul>
@@ -190,12 +204,12 @@ const Navbar = () => {
             : "max-h-0 opacity-0 -translate-y-5"
         }`}
       >
-        <ul className="bg-[var(--color-mobile-navbar)] bg-opacity-20 py-9 flex flex-col items-center px-8 space-y-8 text-2xl text-center rounded-b-2xl shadow-md">
+        <ul className="bg-[var(--color-mobile-navbar)] bg-opacity-20 py-5 flex flex-col items-center px-13 space-y-8 text-2xl text-center rounded-b-2xl shadow-md">
           {navItems.map((item) => (
             <li key={item.id} className="w-full">
               <button
                 onClick={() => handleClick(item.id)}
-                className={`w-full flex items-center justify-center py-4 px-6 transition-all duration-300 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
+                className={`w-full flex items-center justify-center p-5 transition-all duration-300 ease-in-out hover:bg-gray-200 rounded-2xl hover:text-black hover:cursor-pointer ${
                   activeId === item.id
                     ? "bg-[var(--color-secondary)] text-white"
                     : "text-[var(--color-text)]"
@@ -221,7 +235,7 @@ const Navbar = () => {
             {/* Language Toggle - Left */}
             <button
               onClick={toggleLanguage}
-              className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
+              className="py-2 px-4 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
               aria-label="Toggle Language"
             >
               {i18n.language === "en" ? "AR" : "EN"}
@@ -233,7 +247,7 @@ const Navbar = () => {
               className="py-3 px-6 bg-[var(--color-secondary)] text-white rounded-full hover:bg-green-700 transition"
               aria-label="Toggle Dark Mode"
             >
-              {darkMode ? "🌙" : "☀️"}
+              {darkMode ? <MdLightMode className="text-yellow-300"/> : <MdDarkMode className="text-white"/>}
             </button>
           </li>
         </ul>
