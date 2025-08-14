@@ -50,6 +50,7 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
+        <hr className="border border-gray-300"/>
         <button
           type="button"
           className="mt-6 w-max flex items-center justify-center gap-2 text-sm text-blue-600 font-medium bg-blue-50 hover:bg-blue-100 px-2 py-2 mx-auto rounded-full transition"

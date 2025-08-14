@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -32,14 +32,38 @@ const HeroSection = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center md:justify-start gap-6 text-2xl text-[var(--color-secondary)] mb-6">
-            <a href="https://github.com/TalalAlrashedi" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
+            <a
+              href="https://github.com/TalalAlrashedi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-font)] transition-transform transform hover:scale-110"
+            >
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/talal-alshaban-3a2127273/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
+            <a
+              href="https://www.linkedin.com/in/talal-alshaban-3a2127273/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-font)] transition-transform transform hover:scale-110"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://x.com/t_a_a5" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-transform transform hover:scale-110">
+            <a
+              href="https://x.com/t_a_a5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-font)] transition-transform transform hover:scale-110"
+            >
               <BsTwitterX />
+            </a>
+            {/* WhatsApp Icon */}
+            <a
+              href="https://wa.me/966581540432" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-font)] transition-transform transform hover:scale-110"
+            >
+              <FaWhatsapp />
             </a>
           </div>
 
