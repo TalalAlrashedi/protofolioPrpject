@@ -12,7 +12,7 @@ const AboutSection = () => {
   const { t } = useTranslation();
 
   return (
-    <AnimatedSection id="about" className="mt-15 py-20 px-6 md:px-12 ">
+    <AnimatedSection id="about" className="mt-15 py-20 px-6 md:px-12  ">
       <div className="w-full max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-6 md:p-8 shadow-lg border border-[var(--color-secondary)]">
         {" "}
         <div className="mb-10">

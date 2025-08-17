@@ -124,7 +124,7 @@ const projects = [
 const ProjectsSection = () => {
   const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
-  const visibleProject = showAll ? projects : projects.slice(0, 6);
+  const visibleProject = showAll ? projects : projects.slice(0, 3);
 
   return (
     <section dir="ltr" id="projects" className=" py-20">

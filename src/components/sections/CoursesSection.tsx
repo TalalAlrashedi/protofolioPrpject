@@ -109,10 +109,12 @@ const CoursesSection = () => {
       });
     }
   };
+
+
   return (
     <section
       id="courses"
-      className="py-22 px-5 w-[90%] mx-auto relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
+  className="py-6 px-5 w-[90%] mx-auto mb-12 relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
     >
       <h1 className="text-4xl font-bold text-[var(--color-font)] text-center ">

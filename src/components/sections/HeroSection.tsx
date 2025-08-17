@@ -84,7 +84,6 @@ const HeroSection = () => {
             alt="Talal Al Shaban"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
             onLoad={() => setImageLoaded(true)}
-            loading="lazy"
           />
         </div>
       </div>

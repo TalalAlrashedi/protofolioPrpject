@@ -65,8 +65,8 @@ const ContactSection = () => {
     );
   };
   return (
-    <AnimatedSection id="contact" className="mt-10 py-20">
-      <div className=" p-10 md:w-[50%] w-100 mx-auto justify-center bg-[var(--color-cards)] flex flex-col items-center  rounded-3xl shadow-md  border border-[var(--color-secondary)]">
+    <AnimatedSection id="contact" className="mt-25 py-20">
+      <div className=" p-10 md:w-[50%] w-100 mx-auto justify-center bg-[var(--color-cards)] flex flex-col items-center  rounded-3xl shadow-md  border border-[var(--color-secondary)] ">
         <h2 className="text-3xl font-semibold mb-6 text-center text-[var(--color-font)]">
           {t("contact_title")}
           <Underline />
