@@ -26,6 +26,8 @@
   "tools": "الأدوات",
   "showAll": "عرض الكل",
   "goToWebsite": "الذهاب الى الموقع",
+  "darkmode": "الوضع الداكن",
+  "lightmode": "الوضع الفاتح",
   "courses": {
     "title": "الدورات",
     "date": "التاريخ",

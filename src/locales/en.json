@@ -26,7 +26,8 @@
   "download_cv": "Download CV",
   "skills": "Skills",
   "tools": "Tools",
-
+  "darkmode": "Dark",
+  "lightmode": "Light",
   "courses": {
     "title": "Courses",
     "date": "Date",

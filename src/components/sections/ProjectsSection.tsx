@@ -12,6 +12,15 @@ const projects = [
     description:
       "AI-powered platform for exploring academic citations, summaries, and citation strength insights.",
   },
+
+  {
+    title: "Activition Clone",
+    url: "https://activitionclonepro.onrender.com/",
+    image: "project/ActivationClone.png",
+    tags: ["React", "Tailwind", "Node.js"],
+    description:
+      "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
+  },
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
@@ -29,13 +38,14 @@ const projects = [
       "Web app to manage student project ideas with roles for students and admins, secure login, and approval workflows.",
   },
   {
-    title: "Activition Clone",
-    url: "https://activitionclonepro.onrender.com/",
-    image: "project/ActivationClone.png",
-    tags: ["React", "Tailwind", "Node.js"],
+    title: "اعادة تصميم موقع ابن باز باستخدام pure HTML و CSS",
+    url: "https://iimvalue.github.io/binbaz-pages/",
+    image: "project/binbaz.png",
+    tags: ["Css", "HTML"],
     description:
-      "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
+      "A pure HTML and CSS redesign of the Ibn Baz website, showcasing responsive design and clean layout.",
   },
+
   {
     title: "United Airlines Clone",
     url: "https://unitedairlines-651s.onrender.com/",
@@ -44,6 +54,7 @@ const projects = [
     description:
       "Frontend clone of United Airlines with flight search simulation and adaptive UI.",
   },
+
   {
     title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
@@ -113,7 +124,7 @@ const projects = [
 const ProjectsSection = () => {
   const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
-  const visibleProject = showAll ? projects : projects.slice(0, 3);
+  const visibleProject = showAll ? projects : projects.slice(0, 6);
 
   return (
     <section dir="ltr" id="projects" className=" py-20">
@@ -143,7 +154,7 @@ const ProjectsSection = () => {
                   onClick={() => setShowAll(true)}
                   className="px-6 py-2 mt-3 text-center rounded-full border border-[var(--color-secondary)] text-[var(--color-font)] hover:bg-[var(--color-secondary)] hover:text-white transition"
                 >
-                 {t("showAll")}
+                  {t("showAll")}
                 </button>
               </div>
             )}
