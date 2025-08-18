@@ -129,9 +129,11 @@ const Navbar = () => {
                 onClick={() => handleClick(item.id)}
                 className={`flex items-center py-2 px-1 transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] px-2 py-2  text-white hover:cursor-pointer"
-                    : "text-[var(--color-text)] hover:cursor-pointer hover:bg-gray-200 hover:text-black"
-                }`}
+                    ? "bg-[var(--color-secondary)] text-white shadow-lg"
+                    : "text-[var(--color-text)] "
+                }
+              hover:bg-[var(--color-secondary)] hover:cursor-pointer duration-300 hover:text-white hover:shadow-xl hover:-translate-y-1
+            `}
               >
                 {i18n.language === "ar" ? (
                   <>
