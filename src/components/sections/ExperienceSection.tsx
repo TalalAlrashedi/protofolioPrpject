@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import Underline from "../common/Underline.tsx";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
 
-
 const experiences = [
   {
     key: "experience",
@@ -20,7 +19,6 @@ const ExperienceSection = () => {
       <div className="w-full max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-4 md:p-8 shadow-lg border border-[var(--color-secondary)]">
         <div className="mb-10">
           <h2 className="text-4xl font-bold text-[var(--color-font)] flex flex-row-reverse justify-center items-center gap-2">
-      
             {t("experience")}
           </h2>
 
@@ -36,8 +34,8 @@ const ExperienceSection = () => {
               >
                 <div className="flex flex-col md:flex-row items-center gap-4 md:justify-between">
                   <img
-                    src="public/LogoHailHealth.png"
-                    className="w-14 h-14 md:w-12 md:h-12 rounded-full object-cover border-2 border-[var(--color-secondary)] mb-2 md:mb-0"
+                    src="/LogoHailHealth.png"
+                    className="w-14 h-14 md:w-12 md:h-12 rounded-full object-contain border-2 border-[var(--color-secondary)] mb-2 md:mb-0"
                   />
 
                   <h3 className="text-sm sm:text-base md:text-2xl font-bold text-[var(--color-introduce)] text-center md:text-left">
