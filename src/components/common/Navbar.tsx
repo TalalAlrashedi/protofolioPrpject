@@ -35,6 +35,11 @@ const Navbar = () => {
         icon: <IoPersonSharp className="inline-block mr-2 text-sm " />,
       },
       {
+        label: t("experience"),
+        id: "experience",
+        icon: <IoPersonSharp className="inline-block mr-2 text-sm " />,
+      },
+      {
         label: t("projects"),
         id: "projects",
         icon: <HiFolderOpen className="inline-block mr-2 text-xl" />,
@@ -111,7 +116,7 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 md:backdrop-blur-md h-20 mb-1">
-      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:py-5  px-3 flex items-center justify-between relative">
+      <div className="bg-[var(--color-mobile-navbar)] md:bg-transparent md:py-7  px-3 flex items-center justify-between relative">
         <img
           src={logo}
           alt="Talal Tech Logo"
@@ -122,23 +127,23 @@ const Navbar = () => {
         />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] py-3 px-3 rounded-3xl shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <ul className="hidden md:flex gap-6 items-center bg-[var(--color-navbar)] py-3 px-2 rounded-3xl shadow-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`flex items-center py-2 px-1 transition-all rounded-2xl ${
+                className={`flex items-center py-2 px-2  transition-all rounded-2xl ${
                   activeId === item.id
-                    ? "bg-[var(--color-secondary)] text-white shadow-lg"
+                    ? "bg-[var(--color-secondary)] text-white  "
                     : "text-[var(--color-text)] "
                 }
-              hover:bg-[var(--color-secondary)] hover:cursor-pointer duration-300 hover:text-white hover:shadow-xl hover:-translate-y-1
+              hover:bg-[var(--color-secondary)] hover:cursor-pointer duration-300 hover:text-white 
             `}
               >
                 {i18n.language === "ar" ? (
                   <>
                     <span>{item.label}</span>
-                    <span className="inline-block ml-2">{item.icon}</span>
+                    <span className="inline-block ml-5">{item.icon}</span>
                   </>
                 ) : (
                   <>

@@ -11,6 +11,10 @@
   "about_text": "Software engineer specialized in building modern and secure web applications focused on user experience. I work on front-end development with an interest in cybersecurity and data analysis to deliver effective digital solutions.",
   "about_text2": "I hold several certified certificates in cybersecurity and IT, which support my expertise in securing applications and protecting data.",
   "certificates": "Certificates",
+  "experience": "Experience",
+  "experience_desc": "Assisted in securing the hospital’s IT infrastructure against cyber threats while providing technical support to staff and the call center. Conducted data analysis and generated reports using Python and Excel, managed Linux systems, and contributed to optimizing overall IT operations.",
+  "hospital": "King Salman Specialist Hospital - IT Specialist",
+
   "years_experience": "Years Experience",
   "projects": "Projects",
   "showAll": "Show all",

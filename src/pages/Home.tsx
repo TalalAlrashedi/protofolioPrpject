@@ -10,6 +10,7 @@ import ContactSection from "../components/sections/ContactSection";
 import Footer from "../components/common/Footer";
 import ToolsSection from "../components/sections/ToolsSection";
 import CoursesSection from "../components/sections/CoursesSection";
+import ExperienceSection from "../components/sections/ExperienceSection";
 const Home = () => {
   const location = useLocation();
 
@@ -37,6 +38,7 @@ const Home = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection/>
         <div className=" max-w-6xl mx-auto md:px-6 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8  text-white ">
           {" "}
           <SkillsSection />
