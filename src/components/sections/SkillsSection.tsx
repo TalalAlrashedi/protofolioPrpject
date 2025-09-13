@@ -2,7 +2,6 @@ import TagCloudSection from "../../features/TagCloudSection";
 import { useTranslation } from "react-i18next";
 
 
-
 const skills = [
   "React",
   "Tailwind CSS",
@@ -15,7 +14,12 @@ const skills = [
 
 const SkillsSection = () => {
   const { t } = useTranslation();
-  return<TagCloudSection id="skills" title={t("skills")} tags={skills} />
+  return <div>  
+    
+    <TagCloudSection id="skills" title={t("skills")} tags={skills} />
+  
+  </div>
+
 }
 
 export default SkillsSection;

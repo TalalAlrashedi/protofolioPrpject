@@ -71,7 +71,7 @@ const HeroSection = () => {
           <a
             href="/cv/talalalshaban.pdf"
             download
-            className="inline-block bg-[var(--color-secondary)] hover:opacity-80 text-white px-6 py-3 rounded-lg shadow-md transition-transform transform hover:scale-105"
+            className="border-animated px-7 py-3 text-[var(--color-font)]  border border-black/30 rounded-3xl text-lg "
           >
             {t("download_cv")}
           </a>

@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Underline from "../common/Underline.tsx";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
 
+
 const experiences = [
   {
     key: "experience",
@@ -15,10 +16,11 @@ const ExperienceSection = () => {
   const { t } = useTranslation();
 
   return (
-    <AnimatedSection id="experience" className="mt-15 py-20 px-6 md:px-12">
+    <AnimatedSection id="experience" className="mt-20 py-20 px-6 md:px-12">
       <div className="w-full max-w-5xl mx-auto text-center bg-[var(--color-cards)] rounded-3xl p-4 md:p-8 shadow-lg border border-[var(--color-secondary)]">
         <div className="mb-10">
-          <h2 className="text-4xl font-bold text-[var(--color-font)] flex justify-center items-center gap-2">
+          <h2 className="text-4xl font-bold text-[var(--color-font)] flex flex-row-reverse justify-center items-center gap-2">
+      
             {t("experience")}
           </h2>
 
@@ -45,7 +47,6 @@ const ExperienceSection = () => {
                   <p className="text-xs sm:text-sm text-[var(--color-font)] whitespace-nowrap mt-1 md:mt-0">
                     2023/05 - 2023/12
                   </p>
-                  
                 </div>
 
                 <div className="text-center py-2 border-t-1 m-2">

@@ -3,6 +3,7 @@ import { HiMenu, HiX, HiHome, HiFolderOpen, HiBookOpen } from "react-icons/hi";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
 import { useMemo } from "react";
+import { MdWork } from "react-icons/md";
 
 import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo1.png";
@@ -37,7 +38,7 @@ const Navbar = () => {
       {
         label: t("experience"),
         id: "experience",
-        icon: <IoPersonSharp className="inline-block mr-2 text-sm " />,
+        icon: <MdWork className="inline-block mr-2 text-sm " />,
       },
       {
         label: t("projects"),
