@@ -58,7 +58,7 @@ const HeroSection = () => {
             </a>
             {/* WhatsApp Icon */}
             <a
-              href="https://wa.me/966581540432" 
+              href="https://wa.me/966581540432"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--color-font)] transition-transform transform hover:scale-110"
@@ -83,6 +83,7 @@ const HeroSection = () => {
             src="/cv/profile4.png"
             alt="Talal Al Shaban"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
+            loading="lazy"
             onLoad={() => setImageLoaded(true)}
           />
         </div>
