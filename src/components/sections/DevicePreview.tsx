@@ -3,6 +3,8 @@ import LaptopFrame from "../../utils/LaptopFrame";
 import PhoneFrame from "../../utils/PhoneFrame";
 
 const allImages = [
+  "/public/project/castleofwallpaper.jpeg",
+  "/project/castleofwallpaperResponsive.png",
   "/project/IntelliCite.png",
   "/project/intellciteResponsive.jpeg",
   "/project/AttendanceProject.png",

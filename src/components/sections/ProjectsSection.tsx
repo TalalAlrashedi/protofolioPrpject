@@ -12,6 +12,14 @@ const projects = [
     description:
       "AI-powered platform for exploring academic citations, summaries, and citation strength insights.",
   },
+  {
+    title: "CastleOfWallpapers",
+    url: "https://castleofwallpapers.onrender.com/",
+    image: "project/castleofwallpaper.jpeg",
+    tags: ["React", "Tailwind", "Node.js", "API", "Axios", ],
+    description:
+      "A wallpaper app with a vast collection of high-quality images, featuring search and download options.",
+  },
 
   {
     title: "Activition Clone",
