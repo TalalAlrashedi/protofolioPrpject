@@ -30,6 +30,22 @@ const projects = [
       "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
   },
   {
+    title: "Weather App",
+    url: "https://weatherapp-bla9sijix-talals-projects-4c336aab.vercel.app/",
+    image: "project/Weather.png",
+    tags: [
+      "React",
+      "Tailwind",
+      "Node.js",
+      "API",
+      "MongoDB",
+      "Next.js",
+      "Axios",
+    ],
+    description:
+      "Weather forecasting app with login support and API integration for real-time data.",
+  },
+  {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
     image: "project/AttendanceProject.png",
@@ -111,22 +127,7 @@ const projects = [
     description:
       "Real-time chat application built using React and Node.js with styled components.",
   },
-  {
-    title: "Weather App",
-    url: "https://weatherapp-frontend-gcel.onrender.com/login",
-    image: "project/Weather.png",
-    tags: [
-      "React",
-      "Tailwind",
-      "Node.js",
-      "API",
-      "MongoDB",
-      "SweetAlert2",
-      "Axios",
-    ],
-    description:
-      "Weather forecasting app with login support and API integration for real-time data.",
-  },
+  
 ];
 
 const ProjectsSection = () => {
