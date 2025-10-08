@@ -20,18 +20,9 @@ const projects = [
     description:
       "A wallpaper app with a vast collection of high-quality images, featuring search and download options.",
   },
-
-  {
-    title: "Activition Clone",
-    url: "https://activitionclonepro.onrender.com/",
-    image: "project/ActivationClone.png",
-    tags: ["React", "Tailwind", "Node.js"],
-    description:
-      "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
-  },
   {
     title: "Weather App",
-    url: "https://weatherapp-bla9sijix-talals-projects-4c336aab.vercel.app/",
+    url: "https://weatherapp-khaki-five.vercel.app/",
     image: "project/Weather.png",
     tags: [
       "React",
@@ -45,6 +36,15 @@ const projects = [
     description:
       "Weather forecasting app with login support and API integration for real-time data.",
   },
+  {
+    title: "Activition Clone",
+    url: "https://activitionclonepro.onrender.com/",
+    image: "project/ActivationClone.png",
+    tags: ["React", "Tailwind", "Node.js"],
+    description:
+      "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
+  },
+ 
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
