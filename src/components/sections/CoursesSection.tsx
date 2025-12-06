@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import Underline from "../common/Underline.tsx";
-import { useEffect, useRef } from "react";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { useEffect } from "react";
+import CourseCertification from "../common/CourseCertification.tsx";
 type Course = {
   id: number;
   key: string; // مفتاح الترجمة
@@ -79,10 +78,18 @@ const courses: Course[] = [
     tags: ["Cybersecurity", "الامن السيبراني"],
     date: "2025-03-16 - 2025-03-29",
   },
+  {
+    id: 10,
+    key: "AWS Ai",
+    imageUrl:
+     "/certifications/Aws.png",
+    tags: ["AI", "الذكاء الاصطناعي"],
+    date: "2025-10-20 - 2025-10-27",
+  },
 ];
+
 const CoursesSection = () => {
   const { t, i18n } = useTranslation();
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (i18n.language === "ar") {
@@ -92,93 +99,14 @@ const CoursesSection = () => {
     }
   }, [i18n.language]);
 
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: -300,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: 300,
-        behavior: "smooth",
-      });
-    }
-  };
-
-
   return (
-    <section
-      id="courses"
-  className="py-6 px-5 w-[90%] mx-auto mb-12 relative bg-[var(--color-cards)] rounded-3xl shadow-lg border border-[var(--color-secondary)] md:max-w-6xl"
-      dir={i18n.language === "ar" ? "rtl" : "ltr"}
-    >
-      <h1 className="text-4xl font-bold text-[var(--color-font)] text-center ">
-        {t("courses.title")}
-      </h1>
-      <Underline />
-
-      {/* أزرار الأسهم */}
-      <button
-        onClick={scrollLeft}
-        className="absolute top-1/2 left-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
-      >
-        <HiChevronLeft className="w-6 h-6" />
-      </button>
-
-      <button
-        onClick={scrollRight}
-        aria-label={i18n.language === "ar" ? "تمرير لليمين" : "Scroll Right"}
-        className="absolute top-1/2 right-2 -translate-y-1/2 bg-[var(--color-secondary)] text-white p-2 rounded-full shadow hover:opacity-75 transition z-10"
-      >
-        <HiChevronRight className="w-6 h-6" />
-      </button>
-
-      <div
-        ref={scrollRef}
-        className={`mt-8 flex space-x-6 overflow-x-auto scrollbar-hide ${
-          i18n.language === "ar" ? "space-x-reverse" : ""
-        }`}
-        style={{
-          scrollSnapType: "x mandatory",
-          direction: i18n.language === "ar" ? "rtl" : "ltr",
-        }}
-      >
-        {courses.map((course) => (
-          <div
-            key={course.id}
-            className="flex-shrink-0 w-70 p-6 m-5 bg-[var(--color-cards)] border border-gray-300 rounded-3xl shadow-md transition-shadow duration-300 hover:shadow-xl scroll-snap-align-start group"
-          >
-            {course.imageUrl && (
-              <img
-                src={course.imageUrl}
-                alt={t(`courses.${course.key}.title`)}
-                className="w-full h-40 object-cover rounded mb-4"
-              />
-            )}
-            <h2 className=" font-semibold mb-3 leading-none transition-transform duration-500 text-[var(--color-font)] text-center  group-hover:scale-110">
-              {t(`courses.${course.key}.title`)}
-            </h2>
-            <p className="text-sm text-[var(--color-secondary)] mb-3 text-center">
-              {t("courses.date")}: {course.date}
-            </p>
-            <div className="flex justify-center flex-wrap gap-2">
-              {course.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="bg-[var(--color-secondary)] text-white text-xs font-semibold px-2 py-1 rounded-2xl"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+    <section>
+      <CourseCertification
+        sectionId="courses"
+        title={t("courses.title")}
+        items={courses}
+        translationNamespace="courses"
+      />
     </section>
   );
 };

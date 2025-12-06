@@ -11,6 +11,7 @@ import Footer from "../components/common/Footer";
 import ToolsSection from "../components/sections/ToolsSection";
 import CoursesSection from "../components/sections/CoursesSection";
 import ExperienceSection from "../components/sections/ExperienceSection";
+import CertificationsSection from "../components/sections/CertificationsSection";
 const Home = () => {
   const location = useLocation();
 
@@ -46,6 +47,7 @@ const Home = () => {
         </div>
 
         <ProjectsSection />
+        <CertificationsSection />
         <CoursesSection />
         <ContactSection />
       </main>

@@ -42,7 +42,7 @@ const DevicePreview = () => {
   }, []);
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-center mt-4">
+    <div className="relative  flex flex-col md:flex-row items-center justify-center mt-4">
       <LaptopFrame image={laptopImages[laptopIndex]} />
       <PhoneFrame image={phoneImages[phoneIndex]} />
     </div>

@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import logo from "../../assets/logo1.png";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import { HiBadgeCheck } from "react-icons/hi";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -46,10 +47,16 @@ const Navbar = () => {
         icon: <HiFolderOpen className="inline-block mr-2 text-xl" />,
       },
       {
+        label: t("certifications.title"),
+        id: "certifications",
+        icon: <HiBadgeCheck className="inline-block mr-2 text-xl" />,
+      },
+      {
         label: t("courses.title"),
         id: "courses",
         icon: <HiBookOpen className="inline-block mr-2 text-xl" />,
       },
+
       {
         label: t("contact"),
         id: "contact",

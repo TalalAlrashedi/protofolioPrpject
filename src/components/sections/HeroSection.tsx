@@ -12,26 +12,24 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className={`relative px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5 ${
+      className={`relative   px-4 py-15 overflow-hidden min-h-screen flex flex-col items-center justify-center gap-2 mt-5 ${
         imageLoaded ? "animate-fade-up" : "opacity-0"
       }`}
     >
       {/* Intro */}
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row  items-center md:items-start justify-center lg:space-x-40 gap-8 p-8 w-full max-w-6xl  bg-[var(--color-secondary)] rounded-4xl">
         {/* Left - Text + Social */}
-        <div className="flex flex-col items-center md:items-start text-[var(--color-font)] order-2 sm:order-1">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight ">
+        <div className="flex flex-col text-white items-center md:items-start  order-2 sm:order-1 ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4  leading-tight ">
             {t("hero_greeting")}
-            <span className="block text-[var(--color-introduce)]">
-              {t("hero_name")}
-            </span>
+            <span className="block  text-white ">{t("hero_name")}</span>
           </h1>
-          <p className="text-lg text-[var(--color-font)] mb-6 text-center md:text-left">
+          <p className="text-lg text-white mb-6 text-center md:text-left">
             {t("hero_professions")}
           </p>
 
           {/* Social Icons */}
-          <div className="flex justify-center md:justify-start gap-6 text-2xl text-[var(--color-secondary)] mb-6">
+          <div className="flex justify-center md:justify-start gap-6 text-2xl  text-white mb-6">
             <a
               href="https://github.com/TalalAlrashedi"
               target="_blank"
@@ -71,7 +69,7 @@ const HeroSection = () => {
           <a
             href="/cv/talalalshaban.pdf"
             download
-            className="border-animated px-7 py-3 text-[var(--color-font)]  border border-black/30 rounded-3xl text-lg "
+            className="border-animated px-7 py-3 text-white  border border-black/30 rounded-3xl text-lg "
           >
             {t("download_cv")}
           </a>
@@ -82,7 +80,7 @@ const HeroSection = () => {
           <img
             src="/cv/profile4.png"
             alt="Talal Al Shaban"
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[var(--color-secondary)] shadow-lg"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-1 border-gray-300"
             loading="lazy"
             onLoad={() => setImageLoaded(true)}
           />

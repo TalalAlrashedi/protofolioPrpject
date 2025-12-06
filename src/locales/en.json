@@ -15,6 +15,10 @@
   "experience_desc": "Assisted in securing the hospital’s IT infrastructure against cyber threats while providing technical support to staff and the call center. Conducted data analysis and generated reports using Python and Excel, managed Linux systems, and contributed to optimizing overall IT operations.",
   "hospital": "King Salman Specialist Hospital - IT Specialist",
 
+  "tuwaiqAcademy": "Tuwaiq Academy Bootcamp - Fullstack Web Developer Intern",
+  "tuwaiqAcademyDesc": "Participated in the Fullstack Web Development Bootcamp, building web applications using JavaScript, React, and Node.js, completing practical projects to gain hands-on experience.",
+  "tuwaiqPeriod": "2025/03 - 2025/07",
+
   "years_experience": "Years Experience",
   "projects": "Projects",
   "showAll": "Show all",
@@ -32,6 +36,20 @@
   "tools": "Tools",
   "darkmode": "Dark",
   "lightmode": "Light",
+
+  "certifications": {
+    "title": "Certifications",
+    "awsDevAssociate": { "title": "AWS Certified Developer – Associate" },
+    "tuwaiqFullstack": { "title": "Tuwaiq Fullstack Development Bootcamp" },
+    "jiraAgile": { "title": "Agile with Atlassian Jira" },
+    "cyberBootcamp": { "title": "Cybersecurity Bootcamp" },
+    "uiux": { "title": "UI / UX Design" },
+    "ejpt": { "title": "eJPT Certification" },
+    "aiBusiness": { "title": "AI for Business" },
+    "dataAnalytics": { "title": "Data Analytics" },
+    "awsPractitioner": { "title": "AWS Cloud Practitioner" }
+  },
+
   "courses": {
     "title": "Courses",
     "date": "Date",
@@ -68,6 +86,9 @@
     },
     "Jira": {
       "title": "Agile with Atlassian Jira Project Management"
+    },
+    "AWS Ai": {
+      "title": "AI and Machine Learning on AWS"
     }
   }
 }
