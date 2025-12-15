@@ -10,31 +10,31 @@ const projects = [
     image: "project/IntelliCite.png",
     tags: ["React", "Tailwind", "Node.js", "API", "MongoDB", "Axios"],
     description:
-      "AI-powered platform for exploring academic citations, summaries, and citation strength insights.",
+      "منصة ذكاء اصطناعي لتحليل المراجع والاقتباسات الأكاديمية.\n\nAI platform for academic citation analysis and smart summaries.",
+  },
+  {
+    title: "Nazeeh نزيه",
+    url: "https://nazeeh-two.vercel.app/",
+    image: "project/nazeeh.png",
+    tags: ["NextJs", "Tailwind", "Node.js", "API", "MongoDB", "Axios", "AI","Python","framer"],
+    description:
+      "منصة ذكية لتحليل القضايا الطبية والجنائية.\n\nAI-driven platform for medical and criminal case analysis.",
   },
   {
     title: "CastleOfWallpapers",
     url: "https://castleofwallpapers.onrender.com/",
     image: "project/castleofwallpaper.jpeg",
-    tags: ["React", "Tailwind", "Node.js", "API", "Axios", ],
+    tags: ["React", "Tailwind", "Node.js", "API", "Axios"],
     description:
-      "A wallpaper app with a vast collection of high-quality images, featuring search and download options.",
+      "تطبيق لعرض وتنزيل الخلفيات عالية الجودة. باستخدام الذكاء الاصطناعي \n\nWallpaper app with search and download features and generate wallpapers using AI.",
   },
   {
     title: "Weather App",
     url: "https://weatherapp-khaki-five.vercel.app/",
     image: "project/Weather.png",
-    tags: [
-      "React",
-      "Tailwind",
-      "Node.js",
-      "API",
-      "MongoDB",
-      "Next.js",
-      "Axios",
-    ],
+    tags: ["React", "Tailwind", "Node.js", "API", "MongoDB", "Next.js", "Axios"],
     description:
-      "Weather forecasting app with login support and API integration for real-time data.",
+      "تطبيق طقس ببيانات لحظية ودعم تسجيل الدخول.\n\nReal-time weather app with authentication support.",
   },
   {
     title: "Activition Clone",
@@ -42,50 +42,39 @@ const projects = [
     image: "project/ActivationClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
-      "A responsive UI clone of Activision's website showcasing sleek design and layout replication.",
+      "محاكاة واجهة موقع Activision بتصميم متجاوب.\n\nResponsive UI clone of the Activision website.",
   },
- 
   {
     title: "StudentIdeas Management",
     url: "https://mini-project-ideas-managment.onrender.com/login",
     image: "project/AttendanceProject.png",
-    tags: [
-      "React",
-      "Tailwind",
-      "Node.js",
-      "API",
-      "MongoDB",
-      "SweetAlert2",
-      "Axios",
-    ],
+    tags: ["React", "Tailwind", "Node.js", "API", "MongoDB", "SweetAlert2", "Axios"],
     description:
-      "Web app to manage student project ideas with roles for students and admins, secure login, and approval workflows.",
+      "إدارة أفكار مشاريع الطلاب مع نظام صلاحيات.\n\nStudent project ideas management with role-based access.",
   },
   {
-    title: "اعادة تصميم موقع ابن باز باستخدام pure HTML و CSS",
+    title: "اعادة تصميم موقع ابن باز باستخدام HTML و CSS",
     url: "https://iimvalue.github.io/binbaz-pages/",
     image: "project/binbaz.png",
-    tags: ["Css", "HTML"],
+    tags: ["HTML", "CSS"],
     description:
-      "A pure HTML and CSS redesign of the Ibn Baz website, showcasing responsive design and clean layout.",
+      "إعادة تصميم موقع باستخدام HTML و CSS فقط.\n\nPure HTML and CSS website redesign.",
   },
-
   {
     title: "United Airlines Clone",
     url: "https://unitedairlines-651s.onrender.com/",
     image: "project/unitedairlinesClone.png",
     tags: ["React", "Tailwind", "Node.js", "API"],
     description:
-      "Frontend clone of United Airlines with flight search simulation and adaptive UI.",
+      "محاكاة واجهة شركة طيران مع تجربة بحث رحلات.\n\nAirline website clone with flight search simulation.",
   },
-
   {
     title: "Product Shop",
     url: "https://w6-tailwind-lab1.onrender.com/",
     image: "project/ProductShop.png",
     tags: ["React", "Tailwind", "Node.js", "API", "Axios"],
     description:
-      "E-commerce demo app displaying product listings with responsive UI and API integration.",
+      "تطبيق متجر إلكتروني تجريبي.\n\nDemo e-commerce application with API integration.",
   },
   {
     title: "Riyadh Season Clone",
@@ -93,7 +82,7 @@ const projects = [
     image: "project/RiyadhSeasonClone.png",
     tags: ["React", "Tailwind", "Node.js"],
     description:
-      "Modern clone of Riyadh Season website with attractive sections and event showcase.",
+      "محاكاة حديثة لموقع موسم الرياض.\n\nModern clone of the Riyadh Season website.",
   },
   {
     title: "Job Application",
@@ -101,7 +90,7 @@ const projects = [
     image: "https://cdn-icons-png.flaticon.com/512/1260/1260667.png",
     tags: ["React", "Tailwind", "SweetAlert2", "Axios"],
     description:
-      "Job submission form using React hooks with validation, alerts, and clean UI.",
+      "نموذج تقديم وظائف باستخدام React.\n\nJob application form built with React hooks.",
   },
   {
     title: "BMI Calculator",
@@ -109,7 +98,7 @@ const projects = [
     image: "https://cdn-icons-png.flaticon.com/512/3126/3126591.png",
     tags: ["React", "Tailwind", "Node.js", "SweetAlert2"],
     description:
-      "Simple and responsive Body Mass Index calculator with alerts for results.",
+      "حاسبة مؤشر كتلة الجسم بواجهة بسيطة.\n\nSimple and responsive BMI calculator.",
   },
   {
     title: "To-Do List App",
@@ -117,7 +106,7 @@ const projects = [
     image: "project/Todolist.png",
     tags: ["JavaScript", "Bootstrap", "LocalStorage"],
     description:
-      "A clean to-do list app with local storage support and Bootstrap-based design.",
+      "تطبيق مهام مع تخزين محلي.\n\nTo-do list app with local storage support.",
   },
   {
     title: "Chat App",
@@ -125,9 +114,8 @@ const projects = [
     image: "https://cdn-icons-png.flaticon.com/512/2462/2462719.png",
     tags: ["React", "Tailwind", "Node.js", "API", "SweetAlert2", "Axios"],
     description:
-      "Real-time chat application built using React and Node.js with styled components.",
+      "تطبيق محادثة فورية.\n\nReal-time chat application built with React and Node.js.",
   },
-  
 ];
 
 const ProjectsSection = () => {
