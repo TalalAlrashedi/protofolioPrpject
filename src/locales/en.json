@@ -47,7 +47,8 @@
     "ejpt": { "title": "eJPT Certification" },
     "aiBusiness": { "title": "AI for Business" },
     "dataAnalytics": { "title": "Data Analytics" },
-    "awsPractitioner": { "title": "AWS Cloud Practitioner" }
+    "awsPractitioner": { "title": "AWS Cloud Practitioner" } ,
+    "OracleCertifiedAssociate" : {"title": "Oracle Certified Associate (OCA) Java SE 8 Programmer"}
   },
 
   "courses": {

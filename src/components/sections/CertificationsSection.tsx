@@ -21,6 +21,14 @@ const certifications: Certification[] = [
     date: "2025",
   },
   {
+    id: 10,
+    key: "OracleCertifiedAssociate",
+    title: "Oracle Certified Associate (OCA) Java SE 8 Programmer",
+    imageUrl: "/certifications/OCA.png",
+    tags: ["Java", "OOP", "Programming", "Backend"],
+    date: "2026",
+  } ,
+  {
     id: 8,
     key: "tuwaiqFullstack",
     title: "Tuwaiq Fullstack Development Bootcamp",

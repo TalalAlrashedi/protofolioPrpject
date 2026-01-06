@@ -45,7 +45,8 @@
     "ejpt": { "title": "شهادة eJPT" },
     "aiBusiness": { "title": "الذكاء الاصطناعي للأعمال" },
     "dataAnalytics": { "title": "تحليل البيانات" },
-    "awsPractitioner": { "title": "ممارس معتمد من AWS" }
+    "awsPractitioner": { "title": "ممارس معتمد من AWS" },
+    "OracleCertifiedAssociate": { "title": "مُعتمَد من Oracle (OCA) مبرمج Java SE 8" }
   },
 
   "courses": {
