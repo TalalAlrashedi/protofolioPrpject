@@ -18,10 +18,14 @@ interface Props {
   items: Item[];
   sectionId: string;
   translationNamespace: string; // "courses" أو "certifications"
-
 }
 
-const CourseCertification = ({ title, items, sectionId ,translationNamespace}: Props) => {
+const CourseCertification = ({
+  title,
+  items,
+  sectionId,
+  translationNamespace,
+}: Props) => {
   const { i18n, t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +41,7 @@ const CourseCertification = ({ title, items, sectionId ,translationNamespace}: P
   useEffect(() => {
     document.documentElement.setAttribute(
       "dir",
-      i18n.language === "ar" ? "rtl" : "ltr"
+      i18n.language === "ar" ? "rtl" : "ltr",
     );
   }, [i18n.language]);
 
@@ -93,7 +97,8 @@ const CourseCertification = ({ title, items, sectionId ,translationNamespace}: P
             )}
 
             <div className="flex justify-center gap-2 flex-wrap">
-              {item.tags.map((tag, index) => (
+
+              {item.tags?.map((tag, index) => (
                 <span
                   key={index}
                   className="bg-[var(--color-secondary)] text-white text-xs font-semibold px-2 py-1 rounded-2xl"

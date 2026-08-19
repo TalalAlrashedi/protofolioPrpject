@@ -3,7 +3,7 @@ import Underline from "../common/Underline.tsx";
 import AnimatedSection from "../../utils/AnimatedSection.tsx";
 
 const stats = [
-  { key: "certificates", value: 6, color: "text-blue-600" },
+  { key: "certificates", value: 8, color: "text-blue-600" },
   { key: "years_experience", value: 1, color: "text-green-600" },
   { key: "projects", value: 11, color: "text-purple-600" },
 ];

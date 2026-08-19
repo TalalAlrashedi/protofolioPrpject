@@ -12,8 +12,11 @@
   "about_text2": "I hold several certified certificates in cybersecurity and IT, which support my expertise in securing applications and protecting data.",
   "certificates": "Certificates",
   "experience": "Experience",
-  "experience_desc": "Assisted in securing the hospital’s IT infrastructure against cyber threats while providing technical support to staff and the call center. Conducted data analysis and generated reports using Python and Excel, managed Linux systems, and contributed to optimizing overall IT operations.",
-  "hospital": "King Salman Specialist Hospital - IT Specialist",
+  "Emcrey": "Associate Engineer – eMcREY, Riyadh",
+
+  "EmcreyPeriod": "2025/12 - Present",
+
+  "EmcreyDesc": "Transitioned from Backend Development (Java, Spring) to developing and enhancing reconciliation and payment solutions, combining business requirement analysis, GL reconciliation support, process documentation, and stakeholder collaboration." ,
 
   "tuwaiqAcademy": "Tuwaiq Academy Bootcamp - Fullstack Web Developer Intern",
   "tuwaiqAcademyDesc": "Participated in the Fullstack Web Development Bootcamp, building web applications using JavaScript, React, and Node.js, completing practical projects to gain hands-on experience.",

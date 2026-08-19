@@ -33,13 +33,6 @@ const courses: Course[] = [
     tags: ["Cloud Computing", "الحوسبة السحابية"],
     date: "2024-04-13 - 2024-04-26",
   },
-  {
-    id: 3,
-    key: "networkPenTest",
-    imageUrl: "/Courses/penetrationtestingjpeg.jpeg",
-    tags: ["Cybersecurity", "الامن السيبراني"],
-    date: "2024-02-04 - 2024-03-01",
-  },
 
   {
     id: 9,
@@ -58,13 +51,6 @@ const courses: Course[] = [
   },
 
   {
-    id: 5,
-    key: "digitalForensics",
-    imageUrl: "/Courses/digital.png",
-    tags: ["Cybersecurity", "الامن السيبراني"],
-    date: "2024-06-30 - 2024-07-28",
-  },
-  {
     id: 6,
     key: "grcIntro",
     imageUrl: "/Courses/Grc.jpeg",
@@ -81,8 +67,7 @@ const courses: Course[] = [
   {
     id: 10,
     key: "AWS Ai",
-    imageUrl:
-     "/certifications/Aws.png",
+    imageUrl: "/certifications/Aws.png",
     tags: ["AI", "الذكاء الاصطناعي"],
     date: "2025-10-20 - 2025-10-27",
   },
